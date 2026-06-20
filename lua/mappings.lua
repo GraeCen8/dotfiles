@@ -13,4 +13,7 @@ map("i", "<Ctr-2>", "\\n")
 map("i", "<Ctr-3>", "|")
 map("i", "<Ctr-4>", "~")
 
+-- telescope <Ctr-f> as well as <leader> 
+map("n", "<Ctr-}}f>", "<leader>f")
+
 
