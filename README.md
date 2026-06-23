@@ -28,5 +28,5 @@ stow --target="$HOME" nvim alacritty helix zsh
 ```
 
 ## Notes
-- `toggle-nvim.sh` copies the selected profile into `nvim/.config/nvim` and remembers the last active profile in your local state dir.
+- `toggle-nvim.sh` syncs `nvim/.config/nvim` with the selected profile (`nvim-main/.config/nvim` or `nvim-based/.config/nvim`) and remembers the last active profile in your local state dir.
 - Zsh includes `~/.zshrc`, `~/.zshenv`, and `~/.p10k.zsh`.

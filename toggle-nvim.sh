@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET="$ROOT/nvim/.config/nvim"
 MAIN_SRC="$ROOT/nvim-main/.config/nvim"
-BASED_SRC="$ROOT/nvim-based"
+BASED_SRC="$ROOT/nvim-based/.config/nvim"
 STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
 STATE_FILE="$STATE_DIR/nvim-active"
 
@@ -16,23 +16,40 @@ copy_tree() {
   local dst="$2"
 
   mkdir -p "$dst"
-  rsync -a --delete "$src"/ "$dst"/
+  rsync -a --delete --checksum "$src"/ "$dst"/
 }
 
-infer_active() {
+read_state() {
+  if [[ -f "$STATE_FILE" ]]; then
+    cat "$STATE_FILE"
+  fi
+}
+
+detect_active() {
+  local matches=()
+
   if diff -qr "$TARGET" "$MAIN_SRC" >/dev/null 2>&1; then
-    printf 'main'
-  elif diff -qr "$TARGET" "$BASED_SRC" >/dev/null 2>&1; then
-    printf 'based'
-  else
-    printf 'main'
+    matches+=("main")
+  fi
+
+  if diff -qr "$TARGET" "$BASED_SRC" >/dev/null 2>&1; then
+    matches+=("based")
+  fi
+
+  if [[ ${#matches[@]} -eq 1 ]]; then
+    printf '%s\n' "${matches[0]}"
   fi
 }
 
 desired="${1:-toggle}"
+recorded="$(read_state)"
+active="$(detect_active)"
+if [[ -z "$active" ]]; then
+  active="${recorded:-main}"
+fi
+
 case "$desired" in
   toggle)
-    active="$(if [[ -f "$STATE_FILE" ]]; then cat "$STATE_FILE"; else infer_active; fi)"
     if [[ "$active" == "main" ]]; then
       desired="based"
     else
@@ -40,7 +57,6 @@ case "$desired" in
     fi
     ;;
   main|based)
-    active="$(if [[ -f "$STATE_FILE" ]]; then cat "$STATE_FILE"; else infer_active; fi)"
     ;;
   *)
     echo "usage: $(basename "$0") [toggle|main|based]" >&2
