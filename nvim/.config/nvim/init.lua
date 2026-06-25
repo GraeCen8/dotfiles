@@ -1,5 +1,7 @@
 -- options
 vim.g.mapleader = " "
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 local o = vim.opt
 o.number = true
@@ -11,6 +13,8 @@ o.termguicolors = true
 o.ignorecase = true
 o.smartcase = true
 o.winborder = "rounded"
+o.timeoutlen = 300
+o.splitbelow = true
 
 -- packages
 vim.pack.add({
@@ -24,6 +28,11 @@ vim.pack.add({
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/bluz71/vim-moonfly-colors" },
+	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
+	{ src = "https://github.com/folke/which-key.nvim" },
+	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 })
 
 local function packadd(name)
@@ -41,6 +50,11 @@ for _, plugin in ipairs({
 	"mason-lspconfig.nvim",
 	"conform.nvim",
 	"vim-moonfly-colors",
+	"telescope.nvim",
+	"plenary.nvim",
+	"nvim-tree.lua",
+	"which-key.nvim",
+	"toggleterm.nvim",
 }) do
 	packadd(plugin)
 end
@@ -52,42 +66,36 @@ require("mini.pairs").setup()
 require("mini.comment").setup()
 require("mini.surround").setup()
 require("mini.icons").setup()
-require("mini.files").setup()
-require("mini.pick").setup()
+MiniIcons.mock_nvim_web_devicons()
 require("mini.indentscope").setup()
 require("mini.statusline").setup()
 
-local miniclue = require("mini.clue")
-miniclue.setup({
-	triggers = {
-		{ mode = { "n", "x" }, keys = "<Leader>" },
-		{ mode = { "n", "x" }, keys = "g" },
-		{ mode = "n", keys = "[" },
-		{ mode = "n", keys = "]" },
-		{ mode = "n", keys = "<C-w>" },
-		{ mode = "i", keys = "<C-x>" },
-		{ mode = { "n", "x" }, keys = '"' },
-		{ mode = { "n", "x" }, keys = "'" },
-		{ mode = { "n", "x" }, keys = "`" },
-		{ mode = { "n", "x" }, keys = "z" },
-	},
-	clues = {
-		{ mode = "n", keys = "<Leader>f", desc = "+Find" },
-		{ mode = "n", keys = "<Leader>l", desc = "+LSP" },
-		{ mode = "n", keys = "<Leader>m", desc = "+Mini" },
-		miniclue.gen_clues.square_brackets(),
-		miniclue.gen_clues.builtin_completion(),
-		miniclue.gen_clues.g(),
-		miniclue.gen_clues.marks(),
-		miniclue.gen_clues.registers(),
-		miniclue.gen_clues.windows({
-			submode_move = true,
-			submode_navigate = true,
-			submode_resize = true,
-		}),
-		miniclue.gen_clues.z(),
+local which_key = require("which-key")
+which_key.setup({})
+which_key.add({
+	{ "<leader>s", group = "Search" },
+	{ "<leader>l", group = "LSP" },
+	{ "<leader>m", group = "Mini" },
+	{ "<leader>f", group = "Format" },
+	{ "<leader>t", group = "Terminal" },
+})
+
+-- telescope / explorer
+require("telescope").setup({
+	defaults = {
+		mappings = {
+			i = { ["<C-q>"] = require("telescope.actions").smart_send_to_qflist },
+		},
 	},
 })
+
+require("nvim-tree").setup({
+	sync_root_with_cwd = true,
+	update_focused_file = { enable = true, update_root = true },
+	view = { width = 35 },
+})
+
+require("toggleterm").setup({})
 
 -- other setup
 require("gitsigns").setup()
@@ -164,18 +172,36 @@ end
 
 -- keybinds
 local map = vim.keymap.set
+local tb = require("telescope.builtin")
+local Terminal = require("toggleterm.terminal").Terminal
 
-map("n", "<leader>e", function()
-	require("mini.files").open()
-end, { desc = "Explorer" })
+map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
-map("n", "<leader>ff", function()
-	require("mini.pick").builtin.files()
-end, { desc = "Find files" })
+local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
+local floatterm = Terminal:new({ direction = "float", hidden = true })
+local hterm = Terminal:new({ direction = "horizontal", hidden = true })
 
-map("n", "<leader>fg", function()
-	require("mini.pick").builtin.grep_live()
-end, { desc = "Live grep" })
+map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Explorer" })
+map("n", "<leader>sf", tb.find_files, { desc = "Files" })
+map("n", "<leader>sF", function()
+	if not pcall(tb.git_files, { show_untracked = true }) then
+		tb.find_files()
+	end
+end, { desc = "Git files" })
+map("n", "<leader>sg", tb.live_grep, { desc = "Live grep" })
+map("n", "<leader>sb", tb.buffers, { desc = "Buffers" })
+map("n", "<leader>sr", tb.oldfiles, { desc = "Recent files" })
+map("n", "<leader>sh", tb.help_tags, { desc = "Help tags" })
+map("n", "<leader>sk", tb.keymaps, { desc = "Keymaps" })
+map("n", "<leader>sd", tb.diagnostics, { desc = "Diagnostics" })
+map("n", "<leader>ss", tb.lsp_document_symbols, { desc = "Symbols" })
+map("n", "<leader>sS", tb.lsp_dynamic_workspace_symbols, { desc = "Workspace symbols" })
+map("n", "<leader>sm", tb.man_pages, { desc = "C man pages" })
+map("n", "<leader>sw", tb.grep_string, { desc = "Grep word" })
+map("n", "<leader>sc", tb.git_status, { desc = "Git status" })
+map("n", "<leader>tg", function() lazygit:toggle() end, { desc = "Lazygit" })
+map("n", "<leader>tf", function() floatterm:toggle() end, { desc = "Float terminal" })
+map("n", "<leader>th", function() hterm:toggle() end, { desc = "Horizontal terminal" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
