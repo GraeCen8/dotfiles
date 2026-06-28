@@ -3,25 +3,10 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         config = function()
+            local languages = _G.NVIM_TREESITTER_LANGUAGES or {}
+
             require("nvim-treesitter.config").setup({
-                ensure_installed = {
-                    "lua",
-                    "vim",
-                    "vimdoc",
-                    "bash",
-                    "python",
-                    "javascript",
-                    "typescript",
-                    "html",
-                    "css",
-                    "json",
-                    "yaml",
-                    "markdown",
-                    "markdown_inline",
-                    "go",
-                    "rust",
-                    "zsh",
-                },
+                ensure_installed = languages,
 
                 highlight = {
                     enable = true,
