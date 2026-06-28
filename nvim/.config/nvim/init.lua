@@ -8,7 +8,6 @@ local lsp_servers = {
     "gopls",
     "rust_analyzer",
     "templ",
-    "jsonls"
 }
 
 
