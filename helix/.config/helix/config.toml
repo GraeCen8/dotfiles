@@ -1,1 +1,69 @@
-theme = "omarchy"
+theme = "catppuccin_macchiato"
+
+[editor]
+line-number = "relative"
+mouse = true
+middle-click-paste = true
+cursorline = true
+color-modes = true
+bufferline = "multiple"
+popup-border = "all"
+auto-save = true
+auto-format = true
+true-color = true
+idle-timeout = 250
+completion-timeout = 5
+end-of-line-diagnostics = "hint"
+insert-final-newline = true
+preview-completion-insert = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-modification-indicator"]
+center = ["version-control"]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "position-percentage",
+  "file-encoding",
+  "file-line-ending",
+  "file-type"
+]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
+git-global = true
+max-depth = 8
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+display-signature-help-docs = true
+snippets = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+
+[keys.insert]
+C-space = "completion"
+
+[keys.select]
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
