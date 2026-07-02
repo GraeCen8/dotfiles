@@ -125,6 +125,7 @@ alias ic='tdl c'
 alias ix='tdl cx'
 alias icx='tdl c cx'
 alias vim='nvim'
+alias hx='helix'
 
 # Git
 alias g='git'
@@ -137,6 +138,7 @@ alias gpush='git push'
 alias gcm='git commit -m'
 alias gcam='git commit -a -m'
 alias gcad='git commit -a --amend'
+alias lg='lazygit'
 
 # Editor helper
 n() {
