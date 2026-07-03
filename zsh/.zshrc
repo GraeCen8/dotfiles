@@ -125,7 +125,6 @@ alias ic='tdl c'
 alias ix='tdl cx'
 alias icx='tdl c cx'
 alias vim='nvim'
-alias hx='helix'
 
 # Git
 alias g='git'
