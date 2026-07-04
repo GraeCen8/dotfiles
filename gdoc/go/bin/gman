@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  go list std | fzf | xargs go doc -all | less -R
+  exit
+fi
+
+go doc -all "$@" | less -R
