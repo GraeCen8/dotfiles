@@ -6,3 +6,7 @@ local map = vim.keymap.set
 
 map({ "n", "v", "x" }, ";", ":", { desc = "command" })
 map("i", "jk", "<Esc>")
+
+map("i", "<C-1>", "\\")
+map("i", "<C-2>", "\\n")
+map("i", "<C-3>", "|")
