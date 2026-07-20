@@ -11,3 +11,4 @@ map({ "i", "n", "v", "x" }, "<C-2>", "\\n")
 map({ "i", "n", "v", "x" }, "<C-3>", "|")
 
 map({ "n", "v", "x" }, "<Space><Space>", "<Leader>ff", { remap = true, desc = "open files" })
+map({ "n", "v", "x" }, "-", "<Cmd>Oil<Cr>", { desc = "open oil" })
