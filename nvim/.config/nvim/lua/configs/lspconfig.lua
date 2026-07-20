@@ -11,7 +11,7 @@ local servers = {
   "tailwindcss",
   "eslint",
   "jsonls",
-  "astro",
+  "astro-language-server",
   "emmet_language_server",
   "volar",
 }
