@@ -2,13 +2,20 @@ hl.config({
   general = {
     layout = "scrolling",
 
-    gaps_in = 4,
-    gaps_out = 4,
+    gaps_in = 1,
+    gaps_out = 1,
     border_size = 2,
   },
 
   decoration = {
-    rounding = 4,
+    rounding = 1,
+
+    shadow = {
+      enabled = true,
+      range = 20,
+      offset = "0 4",
+      color = "rgba(00000060)",
+    },
 
     -- Blur behind transparent windows (mango: blur radius 5, 1 pass, noise
     -- 0.02, brightness/contrast 0.9, saturation 1.2).
@@ -60,6 +67,7 @@ hl.animation({ leaf = "windowsOut", enabled = true, speed = 6.66, bezier = "line
 hl.animation({ leaf = "workspaces", enabled = true, speed = 6.66, bezier = "easeOutQuint", style = "slidevert" })
 hl.animation({ leaf = "fadeIn", enabled = false })
 hl.animation({ leaf = "fadeOut", enabled = false })
+hl.animation({ leaf = "fadeSwitch", enabled = true, speed = 3.03, bezier = "quick" })
 
 
 -- app rules

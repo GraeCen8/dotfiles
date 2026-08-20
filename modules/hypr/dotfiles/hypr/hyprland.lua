@@ -27,3 +27,9 @@ require("default.hypr.toggles")
 
 -- Add any other personal Hyprland configuration below.
 -- o.window("qemu", { workspace = "5" })
+
+-- Override quake console to use kitty instead of omarchy-agent.
+hl.workspace_rule({
+  workspace = "special:scratchpad",
+  on_created_empty = "[workspace special:scratchpad silent] kitty",
+})

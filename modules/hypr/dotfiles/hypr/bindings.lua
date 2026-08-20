@@ -107,5 +107,9 @@ o.bind("SUPER + I", "Next workspace (down)", hl.dsp.focus({ workspace = "e+1" })
 o.bind("SUPER + R", "Cycle column width", hl.dsp.layout("colresize +conf"))
 o.bind("SUPER + SHIFT + R", "Cycle column width back", hl.dsp.layout("colresize -conf"))
 
+-- Scrolling layout: consume/expel for stack management
+o.bind("SUPER + COMMA", "Consume left window into stack", hl.dsp.layout("consume"))
+o.bind("SUPER + PERIOD", "Expel bottom window from stack", hl.dsp.layout("expel"))
+
 -- other app launcher menu
 o.bind("SUPER + D", "Apps menu", "omarchy-menu toggle apps")

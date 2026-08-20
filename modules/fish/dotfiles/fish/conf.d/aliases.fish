@@ -19,10 +19,7 @@ alias c "opencode"
 alias cx 'printf "\033[2J\033[3J\033[H" && claude --permission-mode bypassPermissions'
 alias d "docker"
 alias r "rails"
-alias t "tmux attach || tmux new -s Work"
-alias ic "tdl c"
-alias ix "tdl cx"
-alias icx "tdl c cx"
+alias i "tdl c"
 alias vim="nvim"
 
 # Git
