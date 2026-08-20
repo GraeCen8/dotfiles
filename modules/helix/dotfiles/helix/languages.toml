@@ -1,0 +1,84 @@
+[[language]]
+name = "nix"
+language-servers = ["nixd"]
+formatter = { command = "alejandra" }
+auto-format = true
+
+[[language]]
+name = "python"
+language-servers = ["basedpyright", "ruff"]
+auto-format = true
+
+[[language]]
+name = "c"
+formatter = { command = "clang-format" }
+auto-format = true
+
+[[language]]
+name = "cpp"
+formatter = { command = "clang-format" }
+auto-format = true
+
+[[language]]
+name = "go"
+auto-format = true
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer"]
+formatter = { command = "rustfmt" }
+auto-format = true
+
+[[language]]
+name = "javascript"
+auto-format = true
+
+[[language]]
+name = "typescript"
+auto-format = true
+
+[[language]]
+name = "jsx"
+auto-format = true
+
+[[language]]
+name = "tsx"
+auto-format = true
+
+[[language]]
+name = "html"
+auto-format = true
+
+[[language]]
+name = "css"
+auto-format = true
+
+[[language]]
+name = "json"
+auto-format = true
+
+[[language]]
+name = "toml"
+auto-format = true
+
+[[language]]
+name = "yaml"
+auto-format = true
+
+[[language]]
+name = "lua"
+auto-format = true
+
+[[language]]
+name = "bash"
+auto-format = true
+
+[[language]]
+name = "odin"
+language-servers = ["ols"]
+
+[[language]]
+name = "zig"
+language-servers = ["zls"]
+auto-format = true
+formatter = { command = "zig", args = ["fmt", "--stdin"] }
