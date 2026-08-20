@@ -1,0 +1,44 @@
+# host config used in all hosts
+# common
+
+host: shared
+description: Shared configuration
+
+enabled_modules:
+  # - emacs
+  - kitty
+  - helium
+  - hypr
+  - fish
+  - nvim
+  - helix
+  # - foot
+  - starship
+  - herdr
+  - zed
+
+module_processing: parallel
+
+# Host-specific packages
+packages: []
+
+# Exclude packages from base or modules
+exclude: []
+
+# Configuration backup settings
+config_backups:
+  enabled: true      # Auto-backup on sync
+  max_backups: 5     # Keep last 5 backups (0 = unlimited)
+
+# System backup settings
+system_backups:
+  enabled: true           # Global toggle for system backups
+  backup_on_sync: true    # Create backup during sync
+  backup_on_update: true  # Create backup during update
+  tool: snapper           # Backup tool: timeshift or snapper
+  snapper_config: root    # Snapper config name (if using snapper)
+  max_backups: 5          # Keep last N backups (0 = unlimited)
+
+# Settings
+flatpak_scope: user
+auto_prune: false

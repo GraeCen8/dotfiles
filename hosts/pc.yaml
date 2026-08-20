@@ -1,0 +1,13 @@
+# Host configuration for omarchy
+# PC
+
+host: pc
+description: PC
+
+import:
+  - hosts/shared/common.yaml
+
+# Enabled modules
+enabled_modules:
+  - emacs
+
