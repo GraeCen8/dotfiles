@@ -280,3 +280,12 @@ require("render-markdown").setup({
 	checkbox = { enabled = false },
 })
 map("n", "<leader>M", function() require("render-markdown").toggle() end, { desc = "Render Markdown" })
+
+-- Tmux sessionizer
+add "kkanden/tmux-sessionizer.nvim"
+require("tmux-sessionizer").setup({
+	directories = { "~/projects", "~/work", "~/dots", "~/.config" },
+	max_depth = 2,
+	suppress_find_errors = true,
+})
+map("n", "<leader>t", "<Cmd>Tmux<CR>", { desc = "Tmux sessions" })
