@@ -2,13 +2,11 @@
 # tmux session -> herdr workspace, tmux window -> herdr tab, tmux pane -> herdr pane
 
 [theme]
-# tmux ran on the terminal's own palette (bg=default, fg=default, ANSI blue accents)
-name = "terminal"
+name = "catppuccin"
 
 [theme.custom]
-# The active tab is drawn as panel_bg text on an accent background, so panel_bg
-# has to be dark for it to read - same colors as status-left's "#[fg=black,bg=blue]"
-panel_bg = "black"
+panel_bg = "#1e1e2e"
+accent = "#89b4fa"
 
 [terminal]
 # Matches -c "#{pane_current_path}" on every split, window, and session

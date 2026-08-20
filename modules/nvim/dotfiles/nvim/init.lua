@@ -1,4 +1,4 @@
-				local vim = vim
+local vim = vim
 
 local servers = { "lua_ls", "ts_ls", "gopls", "pyright",
 	"rust_analyzer", "ols", "zls", "zk", "marksman" }
@@ -53,10 +53,56 @@ local function add(plug)
 	vim.pack.add({ { src = "https://github.com/" .. plug }, })
 end
 
--- colorschemes
-add "bluz71/vim-moonfly-colors"
-vim.g.moonflyTransparent = true
-vim.cmd("colorscheme moonfly")
+-- Omarchy theme: read colors.toml and apply dynamically
+local function load_omarchy_theme()
+	local colors_path = vim.fn.expand("~/.local/state/omarchy/current/theme/colors.toml")
+	local f = io.open(colors_path, "r")
+	if not f then return nil end
+	local c = {}
+	for line in f:lines() do
+		local key, val = line:match('^([%w_]+)%s*=%s*"(#[%x]+)"')
+		if key and val then c[key] = val end
+	end
+	f:close()
+	return c
+end
+
+local c = load_omarchy_theme()
+if c then
+	vim.api.nvim_set_hl(0, "Normal", { fg = c.foreground, bg = c.background })
+	vim.api.nvim_set_hl(0, "Comment", { fg = c.muted, italic = true })
+	vim.api.nvim_set_hl(0, "Constant", { fg = c.yellow })
+	vim.api.nvim_set_hl(0, "String", { fg = c.green })
+	vim.api.nvim_set_hl(0, "Identifier", { fg = c.blue })
+	vim.api.nvim_set_hl(0, "Function", { fg = c.blue })
+	vim.api.nvim_set_hl(0, "Statement", { fg = c.magenta })
+	vim.api.nvim_set_hl(0, "PreProc", { fg = c.magenta })
+	vim.api.nvim_set_hl(0, "Type", { fg = c.yellow })
+	vim.api.nvim_set_hl(0, "Special", { fg = c.orange })
+	vim.api.nvim_set_hl(0, "Error", { fg = c.red })
+	vim.api.nvim_set_hl(0, "Todo", { fg = c.accent, bold = true })
+	vim.api.nvim_set_hl(0, "Search", { fg = c.background, bg = c.accent })
+	vim.api.nvim_set_hl(0, "Visual", { bg = c.selection })
+	vim.api.nvim_set_hl(0, "CursorLine", { bg = c.lighter_background })
+	vim.api.nvim_set_hl(0, "LineNr", { fg = c.muted })
+	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.foreground, bold = true })
+	vim.api.nvim_set_hl(0, "StatusLine", { fg = c.background, bg = c.accent, bold = true })
+	vim.api.nvim_set_hl(0, "Pmenu", { fg = c.foreground, bg = c.lighter_background })
+	vim.api.nvim_set_hl(0, "PmenuSel", { fg = c.background, bg = c.accent })
+	vim.api.nvim_set_hl(0, "TabLine", { fg = c.muted, bg = c.background })
+	vim.api.nvim_set_hl(0, "TabLineFill", { bg = c.background })
+	vim.api.nvim_set_hl(0, "TabLineSel", { fg = c.foreground, bg = c.background, bold = true })
+	vim.api.nvim_set_hl(0, "DiagnosticError", { fg = c.red })
+	vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = c.yellow })
+	vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = c.blue })
+	vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = c.cyan })
+	vim.api.nvim_set_hl(0, "DiffAdd", { fg = c.green })
+	vim.api.nvim_set_hl(0, "DiffDelete", { fg = c.muted })
+	vim.api.nvim_set_hl(0, "DiffChange", { fg = c.yellow })
+	vim.api.nvim_set_hl(0, "MatchParen", { bg = c.selection, bold = true })
+else
+	vim.cmd("colorscheme desert")
+end
 
 
 -- Oil.nvim
@@ -242,11 +288,38 @@ map({ "n", "x", "v" }, "s", function() require("flash").jump() end, { desc = "Fl
 
 -- Status line
 add 'nvim-lualine/lualine.nvim'
+local function lualine_theme()
+	if not c then return "auto" end
+	return {
+		normal = {
+			a = { fg = c.background, bg = c.accent, bold = true },
+			b = { fg = c.foreground, bg = c.lighter_background },
+			c = { fg = c.foreground, bg = c.background },
+		},
+		insert = {
+			a = { fg = c.background, bg = c.green, bold = true },
+		},
+		visual = {
+			a = { fg = c.background, bg = c.magenta, bold = true },
+		},
+		replace = {
+			a = { fg = c.background, bg = c.red, bold = true },
+		},
+		command = {
+			a = { fg = c.background, bg = c.yellow, bold = true },
+		},
+		inactive = {
+			a = { fg = c.muted, bg = c.background },
+			b = { fg = c.muted, bg = c.background },
+			c = { fg = c.muted, bg = c.background },
+		},
+	}
+end
 require("lualine").setup({
 	options = {
-		theme = "auto",
+		theme = lualine_theme(),
 		component_separators = "",
-		section_separators = "",
+		section_separators = { left = "", right = "" },
 		globalstatus = true,
 	},
 	sections = {
@@ -281,11 +354,3 @@ require("render-markdown").setup({
 })
 map("n", "<leader>M", function() require("render-markdown").toggle() end, { desc = "Render Markdown" })
 
--- Tmux sessionizer
-add "kkanden/tmux-sessionizer.nvim"
-require("tmux-sessionizer").setup({
-	directories = { "~/projects", "~/work", "~/dots", "~/.config" },
-	max_depth = 2,
-	suppress_find_errors = true,
-})
-map("n", "<leader>t", "<Cmd>Tmux<CR>", { desc = "Tmux sessions" })

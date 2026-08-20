@@ -4,7 +4,7 @@ hl.config({
 
     gaps_in = 1,
     gaps_out = 1,
-    border_size = 2,
+    border_size = 1,
   },
 
   decoration = {
