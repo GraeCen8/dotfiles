@@ -1,15 +1,17 @@
 -- LSP setup and related plugins
 local servers = { "lua_ls", "ts_ls", "gopls", "pyright", "rust_analyzer", "ols", "zls", "zk", "marksman" }
 
-local function add(plug)
-  vim.pack.add({ { src = "https://github.com/" .. plug }, })
-end
+dofile(vim.fn.stdpath("config") .. "/lua/plugins/add.lua")
 
-add "neovim/nvim-lspconfig"
-add "mason-org/mason.nvim"
-add "mason-org/mason-lspconfig.nvim"
-add "saghen/blink.lib"
-add "saghen/blink.cmp"
+add("neovim/nvim-lspconfig")
+add("mason-org/mason.nvim")
+add("mason-org/mason-lspconfig.nvim")
+add("saghen/blink.lib")
+add("saghen/blink.cmp", {
+  build = function()
+    require("blink.cmp").build():pwait()
+  end,
+})
 
 require("mason").setup()
 require("mason-lspconfig").setup({ ensure_installed = servers })
