@@ -1,6 +1,4 @@
 -- Oil.nvim
-local function add(plug)
-  vim.pack.add({ { src = "https://github.com/" .. plug }, })
-end
+local add = require("plugins.add")
 add "stevearc/oil.nvim"
 require "oil".setup()

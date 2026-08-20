@@ -1,8 +1,6 @@
 -- Treesitter setup
 local langs = { "rust", "javascript", "typescript", "go", "c", "cpp", "odin", "zig", "lua", "markdown", "markdown_inline" }
-local function add(plug)
-  vim.pack.add({ { src = "https://github.com/" .. plug }, })
-end
+local add = require("plugins.add")
 
 add 'nvim-treesitter/nvim-treesitter'
 add 'nvim-treesitter/nvim-treesitter-textobjects'

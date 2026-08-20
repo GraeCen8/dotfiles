@@ -1,7 +1,5 @@
 -- Auto pairs & autotag
-local function add(plug)
-  vim.pack.add({ { src = "https://github.com/" .. plug }, })
-end
+local add = require("plugins.add")
 add 'windwp/nvim-autopairs'
 add 'windwp/nvim-ts-autotag'
 require('nvim-autopairs').setup { check_ts = true }

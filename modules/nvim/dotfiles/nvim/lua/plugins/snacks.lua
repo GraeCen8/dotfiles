@@ -1,7 +1,5 @@
 -- Snacks.nvim & related pickers/extras
-local function add(plug)
-  vim.pack.add({ { src = "https://github.com/" .. plug }, })
-end
+local add = require("plugins.add")
 add 'folke/snacks.nvim'
 require 'snacks'.setup({
   picker = { enabled = true },

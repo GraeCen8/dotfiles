@@ -45,6 +45,19 @@ if c then
 	vim.api.nvim_set_hl(0, "DiffDelete", { fg = c.muted })
 	vim.api.nvim_set_hl(0, "DiffChange", { fg = c.yellow })
 	vim.api.nvim_set_hl(0, "MatchParen", { bg = c.selection, bold = true })
+	-- Popups, floating and plugin windows (docs, which-key, etc)
+	vim.api.nvim_set_hl(0, "NormalFloat", { fg = c.foreground, bg = c.lighter_background })
+	vim.api.nvim_set_hl(0, "FloatBorder", { fg = c.accent, bg = c.lighter_background })
+	vim.api.nvim_set_hl(0, "FloatTitle", { fg = c.accent, bg = c.lighter_background, bold = true })
+	-- Which-Key plugin highlights
+	vim.api.nvim_set_hl(0, "WhichKey",        { fg = c.accent, bg = c.lighter_background, bold = true })
+	vim.api.nvim_set_hl(0, "WhichKeyFloat",   { bg = c.lighter_background })
+	vim.api.nvim_set_hl(0, "WhichKeyBorder",  { fg = c.accent, bg = c.lighter_background })
+	vim.api.nvim_set_hl(0, "WhichKeyGroup",   { fg = c.magenta, bold = true })
+	vim.api.nvim_set_hl(0, "WhichKeySeparator", { fg = c.muted })
+	vim.api.nvim_set_hl(0, "WhichKeyDesc",    { fg = c.blue })
+	vim.api.nvim_set_hl(0, "WhichKeyValue",   { fg = c.yellow })
+	vim.api.nvim_set_hl(0, "LspInfoBorder", { fg = c.accent, bg = c.lighter_background })
 else
 	vim.cmd("colorscheme desert")
 end

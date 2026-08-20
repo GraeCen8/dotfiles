@@ -1,7 +1,7 @@
 -- LSP setup and related plugins
 local servers = { "lua_ls", "ts_ls", "gopls", "pyright", "rust_analyzer", "ols", "zls", "zk", "marksman" }
 
-dofile(vim.fn.stdpath("config") .. "/lua/plugins/add.lua")
+local add = require("plugins.add")
 
 add("neovim/nvim-lspconfig")
 add("mason-org/mason.nvim")
