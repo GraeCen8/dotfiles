@@ -1,0 +1,23 @@
+{
+  "git": {
+    "diff_base": "head"
+  },
+  "autosave": { "after_delay": {"milliseconds": 100}},
+  "proxy": "",
+    "terminal": { "shell": "system", "cursor_shape": "bar" },
+  "which_key": { "delay_ms": 100, "enabled": true },
+  "vim_mode": false,
+  "helix_mode": true,
+  "session": { "trust_all_worktrees": true },
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+   "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha",
+  },
+  "relative_line_numbers": "enabled"
+}
