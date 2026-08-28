@@ -1,0 +1,13 @@
+[config]
+mode = "pkg"
+# stow = ["zsh"]       # these configs mirror into $HOME (GNU stow style)
+# mode = "stow"        # make every config stow-style
+
+# [modules]
+# on = ["nvim"]        # top-level dirs that are their own roots
+#                      # (own pkg.toml + configs/)
+
+[[system]]
+packages = ["fish", "helix", "herdr", "kitty", "lazygit", "opencode", "starship", "tmux"]
+
+[hooks]

@@ -1,0 +1,32 @@
+theme = "ayu_mirage"
+
+[editor]
+cursorline = true
+bufferline = "always"
+true-color = true
+trim-trailing-whitespace = true
+insert-final-newline = true
+popup-border = "all"
+end-of-line-diagnostics = "hint"
+auto-format = true
+completion-timeout = 5
+auto-save = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.lsp]
+snippets = true
+display-progress-messages = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[keys.normal]
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+"-" = "command_mode"
+"A-f" = ":format"
+
+[keys.insert.j]
+k = "normal_mode"
+d = "delete_word_backward"
