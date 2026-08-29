@@ -10,5 +10,6 @@ o.laststatus = 3
 o.cmdheight = 0
 o.winborder = "none"
 o.clipboard = "unnamedplus"
+o.scrolloff = 8
 
 vim.highlight.on_yank()
