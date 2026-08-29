@@ -1,5 +1,5 @@
 -- LSP setup and related plugins
-local servers = { "lua_ls", "ts_ls", "gopls", "pyright", "rust_analyzer", "ols", "zls", "zk" }
+local servers = { "lua_ls", "ts_ls", "gopls", "pyright", "rust_analyzer", "ols", "zls", "zk", "taplo", "marksman" }
 
 local vim = vim
 local add = require("plugins")

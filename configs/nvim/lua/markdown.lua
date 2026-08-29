@@ -6,3 +6,7 @@ require('render-markdown').setup({
 	heading = { sign = false, icons = {} },
 	checkbox = { enabled = false },
 })
+
+-- toggle markdown rendering
+local map = vim.keymap.set
+map("n", "<leader>M", "<Cmd>RenderMarkdown toggle<Cr>", { desc = "toggle markdown" })
