@@ -1,6 +1,21 @@
 local add = require "plugins"
 local map = vim.keymap.set
 
+-- autocommands
+vim.api.nvim_create_autocmd("InsertLeave", {
+  callback = function()
+    if vim.bo.modified and vim.bo.buftype == "" then
+      vim.cmd("silent write")
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  callback = function()
+    vim.cmd("silent! wall")
+  end,
+})
+
 -- undotree
 add 'mbbill/undotree'
 map("n", "<leader>u", vim.cmd.UndotreeToggle, {desc = "undo tree"})
@@ -38,4 +53,8 @@ add 'folke/flash.nvim'
 local flash = require('flash')
 flash.setup()
 map({ "n", "x", "v" }, "s", function() require("flash").jump() end, { desc = "Flash" })
+
+-- icons
+add 'nvim-tree/nvim-web-devicons'
+
 
