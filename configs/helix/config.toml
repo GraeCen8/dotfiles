@@ -11,6 +11,7 @@ end-of-line-diagnostics = "hint"
 auto-format = true
 completion-timeout = 5
 auto-save = true
+scrolloff = 15
 
 [editor.soft-wrap]
 enable = true

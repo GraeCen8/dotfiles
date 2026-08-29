@@ -8,6 +8,38 @@ mode = "pkg"
 #                      # (own pkg.toml + configs/)
 
 [[system]]
-packages = ["fish", "helix", "herdr", "kitty", "lazygit", "opencode", "starship", "tmux"]
+packages = [
+  "cloc",
+  "fish",
+  "helix",
+  "herdr",
+  "kitty",
+  "lazygit",
+  "nvim",
+  "opencode",
+  "starship",
+  "tmux",
+
+  # langs
+  "python",
+  "go",
+  "rustup",
+
+  # lsps
+  "rust-analyzer",
+  "rustfmt",
+  "gopls",
+  "pyright",
+  "python-black",
+  "bash-language-server",
+  "shfmt",
+  "taplo",
+  "typescript-language-server",
+  "prettier",
+  "zls",
+  "zig",
+  "ols",
+  "clang",
+]
 
 [hooks]

@@ -1,4 +1,9 @@
 {
+  "agent": {
+    "favorite_models": [],
+    "single_file_review": true,
+    "model_parameters": []
+  },
   "git": {
     "diff_base": "head"
   },
@@ -10,14 +15,14 @@
   "helix_mode": true,
   "session": { "trust_all_worktrees": true },
   "icon_theme": {
-    "mode": "dark",
+    "mode": "system",
     "light": "Zed (Default)",
     "dark": "Zed (Default)",
   },
    "theme": {
-    "mode": "dark",
+    "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Mocha",
+    "dark": "One Dark"
   },
   "relative_line_numbers": "enabled"
 }
