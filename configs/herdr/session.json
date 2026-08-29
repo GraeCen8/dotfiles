@@ -2,11 +2,11 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w6",
+      "id": "w1",
       "custom_name": null,
-      "identity_cwd": "/home/grae",
+      "identity_cwd": "/home/grae/dots/configs",
       "public_pane_numbers": {
-        "3": 1
+        "1": 1
       },
       "next_public_pane_number": 2,
       "public_tab_numbers": [
@@ -17,16 +17,16 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 3
+            "Pane": 1
           },
           "panes": {
-            "3": {
-              "cwd": "/home/grae"
+            "1": {
+              "cwd": "/home/grae/dots/configs"
             }
           },
           "zoomed": false,
-          "focused": 3,
-          "root_pane": 3
+          "focused": 1,
+          "root_pane": 1
         }
       ],
       "active_tab": 0
