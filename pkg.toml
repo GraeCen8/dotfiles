@@ -1,6 +1,6 @@
 [config]
 mode = "pkg"
-# stow = ["zsh"]       # these configs mirror into $HOME (GNU stow style)
+stow = ["firefox"]       # these configs mirror into $HOME (GNU stow style)
 # mode = "stow"        # make every config stow-style
 
 # [modules]
@@ -9,20 +9,25 @@ mode = "pkg"
 
 [[system]]
 packages = [
-  "cloc",
-  "fish",
-  "herdr",
+# apps
   "kitty",
-  "lazygit",
+	"zen-browser-bin",
+
+# shell
+	"fish",
+	"cloc",
+	"herdr",
+	"lazygit",
   "nvim",
-  "opencode",
-  "starship",
-  "tmux",
+	"opencode",
+	"starship",
+	"tmux",
 
   # langs
   "python",
   "go",
   "rustup",
+	"zig",
 
   # lsps
   "rust-analyzer",
@@ -36,7 +41,6 @@ packages = [
   "typescript-language-server",
   "prettier",
   "zls",
-  "zig",
   "ols",
   "clang",
 ]

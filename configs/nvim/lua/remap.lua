@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-local map = vim.keymap.set 
+local map = vim.keymap.set
 
 map("n", "<leader>w", "<C-w>")
 map("i", "jk", "<Esc>")
@@ -29,3 +29,11 @@ for _, key in ipairs({ "j", "k" }) do
 	map('n', '<A-' .. key .. '>', ':m .' .. dir .. '<CR>==')
 	map('i', '<A-' .. key .. '>', '<Esc>:m .' .. dir .. '<CR>==gi')
 end
+
+-- Yank to system clipboard
+-- map({ 'n', 'v' }, '<leader>y', '"+y')
+-- map({ 'n', 'v' }, '<leader>p', '"+p')
+
+-- Terminal opening
+map({'n', 'v'}, '<leader>t', "<leader>-<C-w>j:term<Cr>a", {desc = "open terminal", remap=true})
+

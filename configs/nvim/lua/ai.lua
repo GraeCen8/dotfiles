@@ -23,4 +23,4 @@ require("copilot").setup({
 
 local map = vim.keymap.set
 -- enable or disable copilot
-map('n', '<leader>c', "<Cmd>Copilot Toggle<Cr>", { desc = "Toggle Copilot" })
+map('n', '<leader>c', "<Cmd>Copilot toggle<Cr>", { desc = "Toggle Copilot" })
