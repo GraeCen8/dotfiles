@@ -1,6 +1,6 @@
 [config]
-mode = "pkg"
-stow = ["firefox"]       # these configs mirror into $HOME (GNU stow style)
+mode = "pkg" # configs mirror into ~/.config/
+# stow = ["firefox"]       # these configs mirror into $HOME (GNU stow style)
 # mode = "stow"        # make every config stow-style
 
 # [modules]
@@ -43,6 +43,8 @@ packages = [
   "zls",
   "ols",
   "clang",
+
+	# other
 ]
 
 [hooks]

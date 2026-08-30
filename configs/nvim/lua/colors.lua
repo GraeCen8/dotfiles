@@ -22,8 +22,8 @@ require('lualine').setup({
       },
       sections = {
         lualine_a = {},                 -- Removes the large Vim Mode block (NORMAL/INSERT)
-        lualine_b = { 'branch', 'diff' }, -- Shows git branch and minimal status
-        lualine_c = { { 'filename', path = 1 } }, -- Shows file name with relative path
+				lualine_b = { 'branch', 'diff' }, -- Shows git branch and minimal status
+				lualine_c = { { 'filename', path = 1 } }, -- Shows file name with relative path
         lualine_x = { 'diagnostics' },   -- Shows LSP errors/warnings only
         lualine_y = { 'progress' },      -- Shows file percentage (e.g., 50%)
         lualine_z = { 'location' }       -- Shows line:column numbers

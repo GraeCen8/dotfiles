@@ -1,6 +1,7 @@
+local langs = { "lua", "rust", "c", "cpp", "odin", "go", "python", "toml", "zig", "fish" }
+
 local add = require('plugins')
 local vim = vim
-local langs = { "lua", "rust", "c", "cpp", "odin", "go", "python", "toml", "zig", "fish" }
 
 add 'nvim-treesitter/nvim-treesitter'
 add 'nvim-treesitter/nvim-treesitter-textobjects'
