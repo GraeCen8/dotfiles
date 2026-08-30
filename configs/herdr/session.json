@@ -2,11 +2,57 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w1",
-      "custom_name": null,
+      "id": "w2",
+      "custom_name": "config",
       "identity_cwd": "/home/grae/dots/configs",
       "public_pane_numbers": {
-        "1": 1
+        "7": 11,
+        "15": 19
+      },
+      "next_public_pane_number": 22,
+      "public_tab_numbers": [
+        6,
+        7
+      ],
+      "next_public_tab_number": 8,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 7
+          },
+          "panes": {
+            "7": {
+              "cwd": "/home/grae/dots/configs"
+            }
+          },
+          "zoomed": false,
+          "focused": 7,
+          "root_pane": 7
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 15
+          },
+          "panes": {
+            "15": {
+              "cwd": "/home/grae/dots/configs"
+            }
+          },
+          "zoomed": false,
+          "focused": 15,
+          "root_pane": 15
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w3",
+      "custom_name": "pkg",
+      "identity_cwd": "/home/grae/code/python/pkg",
+      "public_pane_numbers": {
+        "2": 1
       },
       "next_public_pane_number": 2,
       "public_tab_numbers": [
@@ -17,16 +63,16 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 1
+            "Pane": 2
           },
           "panes": {
-            "1": {
-              "cwd": "/home/grae/dots/configs"
+            "2": {
+              "cwd": "/home/grae/code/python/pkg"
             }
           },
           "zoomed": false,
-          "focused": 1,
-          "root_pane": 1
+          "focused": 2,
+          "root_pane": 2
         }
       ],
       "active_tab": 0
