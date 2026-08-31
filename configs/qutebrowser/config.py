@@ -1,8 +1,6 @@
 c = c
 
-# ─────────────────────────────────────
 # ROSE PINE COLORS
-# ─────────────────────────────────────
 
 base = "#191724"
 surface = "#1f1d2e"
@@ -17,10 +15,7 @@ pine = "#31748f"
 foam = "#9ccfd8"
 iris = "#c4a7e7"
 
-
-# ─────────────────────────────────────
 # FONT
-# ─────────────────────────────────────
 
 c.fonts.default_family = "JetBrains Mono"
 c.fonts.default_size = "11pt"
@@ -31,18 +26,15 @@ c.fonts.tabs.unselected = "11pt JetBrains Mono"
 c.fonts.hints = "bold 11pt JetBrains Mono"
 c.fonts.keyhint = "11pt JetBrains Mono"
 
-
-# ─────────────────────────────────────
 # TABS
-# ─────────────────────────────────────
 
 c.tabs.show = "always"
 
 c.tabs.padding = {
-    "top": 7,
-    "bottom": 7,
-    "left": 12,
-    "right": 12,
+    "top": 5,
+    "bottom": 5,
+    "left": 6,
+    "right": 6,
 }
 
 c.tabs.indicator.width = 3
@@ -51,10 +43,7 @@ c.tabs.title.format_pinned = "{current_title}"
 c.tabs.position = "top"
 c.tabs.background = True
 
-
-# ─────────────────────────────────────
 # TABS COLORS
-# ─────────────────────────────────────
 
 c.colors.tabs.bar.bg = "rgba(25, 23, 36, 0)"
 
@@ -73,18 +62,12 @@ c.colors.tabs.selected.odd.fg = text
 c.colors.tabs.indicator.start = love
 c.colors.tabs.indicator.stop = love
 
-
-# ─────────────────────────────────────
 # SCROLLING
-# ─────────────────────────────────────
 
 c.scrolling.smooth = True
 c.scrolling.bar = "overlay"
 
-
-# ─────────────────────────────────────
 # HINTS
-# ─────────────────────────────────────
 
 c.hints.chars = "asdfghjkl"
 c.hints.radius = 4
@@ -94,10 +77,7 @@ c.colors.hints.bg = f"rgba(235, 111, 146, 0.95)"
 c.colors.hints.fg = base
 c.colors.hints.match.fg = gold
 
-
-# ─────────────────────────────────────
 # COMPLETION
-# ─────────────────────────────────────
 
 c.colors.completion.fg = text
 
@@ -116,9 +96,7 @@ c.colors.completion.scrollbar.bg = overlay
 c.colors.completion.scrollbar.fg = muted
 
 
-# ─────────────────────────────────────
 # KEY HINTS
-# ─────────────────────────────────────
 
 c.keyhint.radius = 16
 c.keyhint.delay = 0
@@ -128,9 +106,7 @@ c.colors.keyhint.fg = text
 c.colors.keyhint.suffix.fg = love
 
 
-# ─────────────────────────────────────
 # STATUS BAR
-# ─────────────────────────────────────
 
 c.statusbar.widgets = [
     "keypress",
@@ -157,18 +133,14 @@ c.colors.statusbar.url.success.https.fg = pine
 c.colors.statusbar.url.warn.fg = gold
 
 
-# ─────────────────────────────────────
 # DOWNLOADS
-# ─────────────────────────────────────
 
 c.colors.downloads.bar.bg = base
 c.colors.downloads.stop.fg = foam
 c.colors.downloads.error.fg = love
 
 
-# ─────────────────────────────────────
 # MESSAGES
-# ─────────────────────────────────────
 
 c.colors.messages.error.fg = love
 c.colors.messages.error.bg = base
@@ -183,9 +155,7 @@ c.colors.messages.info.bg = base
 c.colors.messages.info.border = foam
 
 
-# ─────────────────────────────────────
 # PROMPTS
-# ─────────────────────────────────────
 
 c.colors.prompts.fg = text
 c.colors.prompts.bg = surface
@@ -196,19 +166,25 @@ c.colors.prompts.selected.fg = text
 c.prompt.radius = 8
 
 
-# ─────────────────────────────────────
 # TOOLTIPS
-# ─────────────────────────────────────
 
 c.colors.tooltip.bg = surface
 c.colors.tooltip.fg = text
 
+# URLS
 
-# ─────────────────────────────────────
+c.url.searchengines = {
+    "DEFAULT": "https://www.duckduckgo.com/search?q={}",
+    "!w": "https://en.wikipedia.org/wiki/{}",
+    "!gh": "https://github.com/results?search_query={}",
+    "!aw": "https://wiki.archlinux.org/?search={}",
+    "!pgk": "https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=",
+    "!yt": 'https://www.youtube.com/results?search_query={}',
+}
+
 # WEBPAGES
-# ─────────────────────────────────────
 
 c.colors.webpage.preferred_color_scheme = "dark"
 c.colors.webpage.darkmode.enabled = True
 
-config.load_autoconfig(False)
+config.load_autoconfig(True)
