@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Page</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #191724;
+      color: #e0def4;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 40px;
+    }
+    a {
+      display: block;
+      text-decoration: none;
+      color: #e0def4;
+      padding: 10px 16px;
+      border: 1px solid #26233a;
+      border-radius: 4px;
+      background: #1f1d2e;
+      transition: all 0.15s ease;
+    }
+    a:hover {
+      border-color: #31748f;
+      background: #26233a;
+    }
+    .num {
+      color: #9ccfd8;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="links">
+    <a href="https://youtube.com"><span class="num">[1]</span> YouTube</a>
+    <a href="https://wiki.archlinux.org"><span class="num">[2]</span> Arch Wiki</a>
+    <a href="https://lichess.org"><span class="num">[3]</span> Chess</a>
+    <a href="https://qutebrowser.com/doc/help/"><span class="num">[4]</span> Qutebrowser Help</a>
+    <a href="https://duckduckgo.com"><span class="num">[5]</span> DuckDuckGo</a>
+    <a href="https://omarchy.org"><span class="num">[6]</span> Omarchy</a>
+    <a href="https://www.rust-lang.org"><span class="num">[7]</span> Rust</a>
+  </div>
+  <script>
+    const sites = [
+      "https://youtube.com",
+      "https://wiki.archlinux.org",
+      "https://lichess.org",
+      "https://qutebrowser.com/doc/help/",
+      "https://duckduckgo.com",
+      "https://omarchy.org",
+      "https://www.rust-lang.org"
+    ];
+    document.addEventListener("keydown", e => {
+      const n = parseInt(e.key);
+      if (n >= 1 && n <= sites.length) location.href = sites[n - 1];
+    });
+  </script>
+</body>
+</html>

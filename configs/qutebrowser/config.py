@@ -1,6 +1,6 @@
 c = c
 
-c.url.start_pages = ["about:blank"]
+c.url.start_pages = ["file:///home/grae/.config/qutebrowser/startpage.html"]
 
 # ROSE PINE COLORS
 
