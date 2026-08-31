@@ -281,3 +281,241 @@
 2026-08-30T17:03:19.099401Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
 2026-08-30T17:03:19.099408Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
 2026-08-30T17:03:19.099411Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T17:33:19.098988Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T17:33:19.099259Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T17:33:19.099280Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T17:33:19.099284Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T17:33:19.099457Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T17:33:19.099462Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T17:33:19.099464Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T18:03:19.100562Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T18:03:19.100853Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T18:03:19.100867Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T18:03:19.100873Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T18:03:19.101198Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T18:03:19.101210Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T18:03:19.101215Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T18:33:19.101628Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T18:33:19.101829Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T18:33:19.101835Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T18:33:19.101838Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T18:33:19.101990Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T18:33:19.101993Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T18:33:19.101995Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T19:03:19.102499Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T19:03:19.102770Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T19:03:19.102783Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T19:03:19.102788Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T19:03:19.103037Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T19:03:19.103046Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T19:03:19.103051Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T19:33:19.103675Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T19:33:19.104010Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T19:33:19.104032Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T19:33:19.104035Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T19:33:19.104213Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T19:33:19.104217Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T19:33:19.104219Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T20:03:19.104593Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T20:03:19.104873Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T20:03:19.104886Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T20:03:19.104891Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T20:03:19.105144Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T20:03:19.105155Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T20:03:19.105160Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T20:33:19.105228Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T20:33:19.105497Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T20:33:19.105510Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T20:33:19.105516Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T20:33:19.105767Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T20:33:19.105776Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T20:33:19.105780Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T21:03:19.106283Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T21:03:19.106555Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T21:03:19.106569Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T21:03:19.106574Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T21:03:19.106815Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T21:03:19.106824Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T21:03:19.106829Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T21:33:19.107573Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T21:33:19.107858Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T21:33:19.107877Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T21:33:19.107896Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T21:33:19.108151Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T21:33:19.108160Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T21:33:19.108165Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T22:03:19.108286Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T22:03:19.108586Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T22:03:19.108599Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T22:03:19.108604Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T22:03:19.108871Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T22:03:19.108881Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T22:03:19.108886Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T22:33:19.109103Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T22:33:19.109392Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T22:33:19.109418Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T22:33:19.109424Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T22:33:19.109676Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T22:33:19.109686Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T22:33:19.109691Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T23:03:19.110144Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T23:03:19.110550Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T23:03:19.110571Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T23:03:19.110574Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T23:03:19.110756Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T23:03:19.110760Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T23:03:19.110763Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T23:33:19.111147Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-30T23:33:19.111435Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T23:33:19.111460Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T23:33:19.111471Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-30T23:33:19.111738Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-30T23:33:19.111749Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-30T23:33:19.111754Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T00:03:19.112606Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T00:03:19.112905Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T00:03:19.112918Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T00:03:19.112924Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T00:03:19.113183Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T00:03:19.113204Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T00:03:19.113209Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T00:33:19.113617Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T00:33:19.113896Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T00:33:19.113910Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T00:33:19.113915Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T00:33:19.114167Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T00:33:19.114177Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T00:33:19.114182Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T01:03:19.114216Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T01:03:19.114499Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T01:03:19.114512Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T01:03:19.114517Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T01:03:19.114769Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T01:03:19.114778Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T01:03:19.114782Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T01:33:19.114625Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T01:33:19.114901Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T01:33:19.114914Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T01:33:19.114925Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T01:33:19.115181Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T01:33:19.115199Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T01:33:19.115204Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T02:03:19.115531Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T02:03:19.115822Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T02:03:19.115836Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T02:03:19.115841Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T02:03:19.116092Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T02:03:19.116101Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T02:03:19.116106Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T02:33:19.116984Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T02:33:19.117293Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T02:33:19.117307Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T02:33:19.117312Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T02:33:19.117563Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T02:33:19.117573Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T02:33:19.117577Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T03:03:19.118372Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T03:03:19.118602Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T03:03:19.118608Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T03:03:19.118610Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T03:03:19.118774Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T03:03:19.118778Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T03:03:19.118780Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T03:33:19.119829Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T03:33:19.120108Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T03:33:19.120122Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T03:33:19.120127Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T03:33:19.120401Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T03:33:19.120421Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T03:33:19.120426Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T04:03:19.121647Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T04:03:19.121942Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T04:03:19.121955Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T04:03:19.121961Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T04:03:19.122242Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T04:03:19.122257Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T04:03:19.122260Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T04:33:19.122392Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T04:33:19.122665Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T04:33:19.122691Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T04:33:19.122696Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T04:33:19.122943Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T04:33:19.122953Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T04:33:19.122958Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T05:03:19.123550Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T05:03:19.123822Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T05:03:19.123835Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T05:03:19.123841Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T05:03:19.124087Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T05:03:19.124096Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T05:03:19.124101Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T05:33:19.124750Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T05:33:19.124976Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T05:33:19.124983Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T05:33:19.124985Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T05:33:19.125149Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T05:33:19.125156Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T05:33:19.125165Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T06:03:19.126633Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T06:03:19.126921Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T06:03:19.126934Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T06:03:19.126939Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T06:03:19.127193Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T06:03:19.127203Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T06:03:19.127209Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T06:33:19.127437Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T06:33:19.127730Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T06:33:19.127747Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T06:33:19.127753Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T06:33:19.127996Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T06:33:19.128005Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T06:33:19.128010Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T07:03:19.128191Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T07:03:19.129321Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T07:03:19.129336Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T07:03:19.129339Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T07:03:19.129540Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T07:03:19.129544Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T07:03:19.129547Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T07:33:19.129376Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T07:33:19.129689Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T07:33:19.129704Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T07:33:19.129710Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T07:33:19.129973Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T07:33:19.129990Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T07:33:19.130001Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T08:03:19.130393Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T08:03:19.130662Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T08:03:19.130670Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T08:03:19.130673Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T08:03:19.130852Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T08:03:19.130856Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T08:03:19.130858Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T08:33:19.132016Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T08:33:19.133156Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T08:33:19.133171Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T08:33:19.133177Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T08:33:19.133432Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T08:33:19.133443Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T08:33:19.133448Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T09:03:19.133675Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T09:03:19.133959Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T09:03:19.133972Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T09:03:19.133977Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T09:03:19.134226Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T09:03:19.134236Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T09:03:19.134242Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T09:33:19.133904Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T09:33:19.135417Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T09:33:19.135428Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T09:33:19.135431Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T09:33:19.135605Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T09:33:19.135609Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T09:33:19.135614Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T10:03:19.135742Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-31T10:03:19.136038Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T10:03:19.136051Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T10:03:19.136056Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
+2026-08-31T10:03:19.136408Z  WARN herdr::config::keybinds: config diagnostic prefix+shift+r: kept keys.rename_workspace, disabled keys.rename_tab
+2026-08-31T10:03:19.136423Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.previous_tab = "S-Left"; disabling binding
+2026-08-31T10:03:19.136426Z  WARN herdr::config::keybinds: config diagnostic invalid keybinding: keys.next_tab = "S-Right"; disabling binding
