@@ -3,6 +3,8 @@ set -g fish_history_max 32768
 set -g fish_cursor_default bar
 set -g fish_cursor_insert bar
 
+set -g fish_key_bindings fish_vi_key_bindings
+
 starship init fish | source
 zoxide init fish | source
 

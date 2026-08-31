@@ -1,5 +1,7 @@
 c = c
 
+c.url.start_pages = ["about:blank"]
+
 # ROSE PINE COLORS
 
 base = "#191724"
