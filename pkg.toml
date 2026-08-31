@@ -11,7 +11,7 @@ mode = "pkg" # configs mirror into ~/.config/
 packages = [
 # apps
   "kitty",
-	"zen-browser-bin",
+	"qutebrowser",
 
 # shell
 	"fish",
