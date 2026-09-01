@@ -4,11 +4,11 @@ add 'zbirenbaum/copilot.lua'
 
 require("copilot").setup({
 	suggestion = {
-		enabled = true,
+		enabled = false,
 		auto_trigger = true,
 
 		keymap = {
-			accept = "<Tab>",
+			accept = "<C-y>",
 			next = "<C-e>",
 			prev = "<C-r>",
 			dismiss = "<C-=>",

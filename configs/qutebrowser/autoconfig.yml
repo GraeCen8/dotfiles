@@ -10,4 +10,5 @@ settings:
     global:
       normal:
         ',': clear-messages
+        E: open -t file:///home/grae/.config/qutebrowser/startpage.html
         home: .

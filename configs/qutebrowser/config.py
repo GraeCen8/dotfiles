@@ -184,6 +184,10 @@ c.url.searchengines = {
     "!yt": 'https://www.youtube.com/results?search_query={}',
 }
 
+# KEYBINDINGS
+
+config.bind("E", "open -t file:///home/grae/.config/qutebrowser/startpage.html")
+
 # WEBPAGES
 
 c.colors.webpage.preferred_color_scheme = "dark"

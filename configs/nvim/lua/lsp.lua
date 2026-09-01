@@ -40,6 +40,7 @@ vim.diagnostic.config({
 	severity_sort = true,
 })
 
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		local buf = args.buf

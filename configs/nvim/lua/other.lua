@@ -2,13 +2,13 @@ local add = require "plugins"
 local map = vim.keymap.set
 
 -- autocommands
-vim.api.nvim_create_autocmd("InsertLeave", {
-  callback = function()
-    if vim.bo.modified and vim.bo.buftype == "" then
-      vim.cmd("silent write")
-    end
-  end,
-})
+				-- vim.api.nvim_create_autocmd("InsertLeave", {
+				--   callback = function()
+				--     if vim.bo.modified and vim.bo.buftype == "" then
+				--       vim.cmd("silent write")
+				--     end
+				--   end,
+				-- })
 
 vim.api.nvim_create_autocmd("VimLeavePre", {
   callback = function()
