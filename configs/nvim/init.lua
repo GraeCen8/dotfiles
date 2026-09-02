@@ -57,9 +57,7 @@ map("n", "<leader>x", ":bdelete<CR>", { desc = "Close buffer" })
 map("n", "<leader>-", "<C-w>s", { desc = "Horizontal split" })
 map("n", "<leader>=", "<C-w>v", { desc = "Vertical split" })
 
-map("n", "<Esc>", "<cmd>nohlsearch<CR><Esc>", {
-	silent = true,
-})
+map("n", "<Esc>", "<cmd>nohlsearch<CR><Esc>", { silent = true, })
 
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { silent = true })
 
@@ -135,7 +133,7 @@ require('lualine').setup({
 --
 -- Treesitter
 --
-local langs = { "lua", "rust", "c", "cpp", "odin", "go", "python", "toml", "zig", "fish" }
+local langs = { "lua", "rust", "c", "cpp", "odin", "go", "python", "toml", "zig", "fish", "org" }
 
 add 'nvim-treesitter/nvim-treesitter'
 add 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -233,6 +231,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		lspmap("<leader>H", function()
 			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 		end, "inlay hints")
+
+		vim.keymap.set('n', '<leader>.', function()
+			local params = vim.lsp.util.make_position_params()
+			vim.lsp.buf_request(0, 'textDocument/definition', params, function(_,
+											   result, ctx, _)
+				if result == nil or vim.tbl_isempty(result) then
+					print("No definition found")
+					return
+				end
+				if vim.tbl_islist(result) then
+					vim.lsp.util.jump_to_location(result[1], 'utf-8')
+				else
+					vim.lsp.util.jump_to_location(result, 'utf-8')
+				end
+			end)
+		end, { noremap = true, silent = true, desc = "LSP: Definition" })
 	end,
 })
 vim.lsp.enable(servers)
@@ -376,3 +390,5 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		MiniClue.ensure_buf_triggers()
 	end,
 })
+
+

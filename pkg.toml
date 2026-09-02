@@ -11,11 +11,11 @@ mode = "pkg" # configs mirror into ~/.config/
 packages = [
     "bash-language-server",
     "clang",
-    # "cloc",
     "cloc",
     "fish",
     "go",
     "gopls",
+    "helix",
     "herdr",
     "kitty",
     "lazygit",

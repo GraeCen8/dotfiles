@@ -108,6 +108,10 @@
       "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
       "src": "https://github.com/stevearc/oil.nvim"
     },
+    "orgmode": {
+      "rev": "005368b30cea12ececfbe27240b4269939aac6e6",
+      "src": "https://github.com/nvim-orgmode/orgmode"
+    },
     "playground": {
       "rev": "ba48c6a62a280eefb7c85725b0915e021a1a0749",
       "src": "https://github.com/nvim-treesitter/playground"
