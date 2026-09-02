@@ -9,42 +9,34 @@ mode = "pkg" # configs mirror into ~/.config/
 
 [[system]]
 packages = [
-# apps
-  "kitty",
-	"qutebrowser",
-
-# shell
-	"fish",
-	"cloc",
-	"herdr",
-	"lazygit",
-  "nvim",
-	"opencode",
-	"starship",
-	"tmux",
-
-  # langs
-  "python",
-  "go",
-  "rustup",
-	"zig",
-
-  # lsps
-  "rust-analyzer",
-  "rustfmt",
-  "gopls",
-  "pyright",
-  "python-black",
-  "bash-language-server",
-  "shfmt",
-  "taplo",
-  "typescript-language-server",
-  "prettier",
-  "zls",
-  "ols",
-  "clang",
-
-	# other
+    "bash-language-server",
+    "clang",
+    "cloc",
+    "fish",
+    "go",
+    "gopls",
+    "herdr",
+    "kitty",
+    "lazygit",
+    "lua-language-server",
+    "nvim",
+    "ols",
+    "opencode",
+    "prettier",
+    "pyright",
+    "python",
+    "python-black",
+    "qutebrowser",
+    "rust-analyzer",
+    "rustfmt",
+    "rustup",
+    "shfmt",
+    "starship",
+    "taplo",
+    "tmux",
+    "typescript-language-server",
+    "zig",
+    "zls",
 ]
 
 [hooks]
