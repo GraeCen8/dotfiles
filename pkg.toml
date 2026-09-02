@@ -11,6 +11,7 @@ mode = "pkg" # configs mirror into ~/.config/
 packages = [
     "bash-language-server",
     "clang",
+    # "cloc",
     "cloc",
     "fish",
     "go",
