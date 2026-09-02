@@ -2,43 +2,43 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w2",
-      "custom_name": "config",
+      "id": "w4",
+      "custom_name": "dots",
       "identity_cwd": "/home/grae/dots/configs",
       "public_pane_numbers": {
-        "6": 4
+        "1": 10
       },
-      "next_public_pane_number": 7,
+      "next_public_pane_number": 22,
       "public_tab_numbers": [
-        4
+        1
       ],
-      "next_public_tab_number": 5,
+      "next_public_tab_number": 8,
       "tabs": [
         {
           "custom_name": null,
           "layout": {
-            "Pane": 6
+            "Pane": 1
           },
           "panes": {
-            "6": {
+            "1": {
               "cwd": "/home/grae/dots/configs"
             }
           },
           "zoomed": false,
-          "focused": 6,
-          "root_pane": 6
+          "focused": 1,
+          "root_pane": 1
         }
       ],
       "active_tab": 0
     },
     {
-      "id": "w3",
+      "id": "w7",
       "custom_name": "pkg",
-      "identity_cwd": "/home/grae/dots/configs",
+      "identity_cwd": "/home/grae/code/python/pkg",
       "public_pane_numbers": {
-        "3": 1
+        "2": 3
       },
-      "next_public_pane_number": 2,
+      "next_public_pane_number": 8,
       "public_tab_numbers": [
         1
       ],
@@ -47,16 +47,98 @@
         {
           "custom_name": null,
           "layout": {
+            "Pane": 2
+          },
+          "panes": {
+            "2": {
+              "cwd": "/home/grae/code/python/pkg"
+            }
+          },
+          "zoomed": false,
+          "focused": 2,
+          "root_pane": 2
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w9",
+      "custom_name": "notes",
+      "identity_cwd": "/home/grae/notes",
+      "public_pane_numbers": {
+        "4": 2,
+        "3": 1
+      },
+      "next_public_pane_number": 9,
+      "public_tab_numbers": [
+        1,
+        2
+      ],
+      "next_public_tab_number": 3,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
             "Pane": 3
           },
           "panes": {
             "3": {
-              "cwd": "/home/grae/dots/configs"
+              "cwd": "/home/grae/notes"
             }
           },
           "zoomed": false,
           "focused": 3,
           "root_pane": 3
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 4
+          },
+          "panes": {
+            "4": {
+              "cwd": "/home/grae/notes"
+            }
+          },
+          "zoomed": false,
+          "focused": 4,
+          "root_pane": 4
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w8",
+      "custom_name": "trading",
+      "identity_cwd": "/home/grae/code/trading",
+      "public_pane_numbers": {
+        "5": 1
+      },
+      "next_public_pane_number": 3,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 5
+          },
+          "panes": {
+            "5": {
+              "cwd": "/home/grae/code/trading",
+              "agent_session": {
+                "source": "herdr:opencode",
+                "agent": "opencode",
+                "kind": "id",
+                "value": "ses_f9dd505ebffeutZ76ItN6M5H88"
+              }
+            }
+          },
+          "zoomed": false,
+          "focused": 5,
+          "root_pane": 5
         }
       ],
       "active_tab": 0
@@ -65,6 +147,6 @@
   "active": 0,
   "selected": 0,
   "sidebar_width": 26,
-  "sidebar_section_split": 0.5,
+  "sidebar_section_split": 0.51111114,
   "collapsed_space_keys": []
 }

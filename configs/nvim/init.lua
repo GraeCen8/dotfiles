@@ -254,9 +254,7 @@ require 'oil'.setup()
 map("n", "-", "<Cmd>Oil<Cr>", { desc = "file tree" })
 
 add 'lewis6991/gitsigns.nvim'
-add 'kdheepak/lazygit.nvim'
 require('gitsigns').setup()
-map({ "n", "i", "v" }, "<C-g>", "<Cmd>LazyGit<Cr>")
 
 add 'folke/flash.nvim'
 require('flash').setup()
