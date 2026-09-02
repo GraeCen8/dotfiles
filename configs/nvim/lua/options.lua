@@ -11,5 +11,6 @@ o.cmdheight = 0
 o.winborder = "none"
 o.clipboard = "unnamedplus"
 o.scrolloff = 8
+o.winborder = "rounded"
 
 vim.highlight.on_yank()

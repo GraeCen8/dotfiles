@@ -62,14 +62,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		lspmap("<leader>H", function()
 			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 		end, "inlay hints")
-		--[[
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = args.buf,
-      callback = function()
-        vim.lsp.buf.format({})
-      end
-    })
-    --]]
+
+		-- vim.api.nvim_create_autocmd("BufWritePre", {
+		-- 	buffer = args.buf,
+		-- 	callback = function()
+		-- 		vim.lsp.buf.format({})
+		-- 	end
+		-- })
 	end,
 })
 vim.lsp.enable(servers)

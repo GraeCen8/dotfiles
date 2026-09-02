@@ -24,17 +24,9 @@ for _, key in ipairs({ "h", "j", "k", "l" }) do
 	map({ "n", "v", "x" }, "<C-" .. key .. ">", "<C-w>" .. key)
 end
 
-for _, key in ipairs({ "j", "k" }) do
-	local dir = key == "j" and "+1" or "-2"
-	map('n', '<A-' .. key .. '>', ':m .' .. dir .. '<CR>==')
-	map('i', '<A-' .. key .. '>', '<Esc>:m .' .. dir .. '<CR>==gi')
-	map('v', '<A-' .. key .. '>', ":m ." .. dir .. '<CR>==')
-end
-
 -- Yank to system clipboard
 map({ 'n', 'v' }, '<leader>y', '"+y')
 map({ 'n', 'v' }, '<leader>p', '"+p')
 
 -- Terminal opening
-map({'n', 'v'}, '<leader>t', "<leader>-<C-w>j:term<Cr>a", {desc = "open terminal", remap=true})
-
+map({ 'n', 'v' }, '<leader>t', "<leader>-<C-w>j:term<Cr>a", { desc = "open terminal", remap = true })

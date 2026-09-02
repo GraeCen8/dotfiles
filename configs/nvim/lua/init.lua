@@ -8,7 +8,7 @@ require("treesitter")
 require("lsp")
 require("other")
 require("markdown")
-require("picker")
+require('mini')
 
 require("ai")
 
