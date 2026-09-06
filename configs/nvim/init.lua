@@ -1,5 +1,35 @@
+local langs = {
+	"lua",
+	"rust",
+	"c",
+	"cpp",
+	"odin",
+	"go",
+	"python",
+	"toml",
+	"zig",
+	"fish",
+	"org",
+}
+
+local servers = {
+	"lua_ls",
+	"ts_ls",
+	"gopls",
+	"pyright",
+	"rust_analyzer",
+	"ols",
+	"zls",
+	"zk",
+	"taplo",
+	"marksman",
+}
+
+
 -- Plugin helper
 _G.plugin_build_callbacks = _G.plugin_build_callbacks or {}
+
+require("vim._core.ui2").enable({})
 
 local add = function(plug, opts)
 	vim.pack.add({
@@ -85,7 +115,7 @@ o.laststatus = 3
 o.cmdheight = 0
 o.winborder = "rounded"
 o.clipboard = "unnamedplus"
-o.scrolloff = 8
+o.scrolloff = 10
 
 vim.highlight.on_yank()
 
@@ -94,7 +124,7 @@ vim.highlight.on_yank()
 --
 add 'rose-pine/neovim'
 
-function ColorPencils(color)
+function ColorMyPencils(color)
 	color = color or "rose-pine"
 	vim.cmd('colorscheme ' .. color)
 
@@ -102,41 +132,15 @@ function ColorPencils(color)
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-ColorPencils("rose-pine")
-
-add 'nvim-lualine/lualine.nvim'
-require('lualine').setup({
-	options = {
-		theme = 'rose-pine',
-		component_separators = { left = '·', right = '·' },
-		section_separators = { left = '', right = '' },
-		globalstatus = true,
-	},
-	sections = {
-		lualine_a = {},
-		lualine_b = { 'branch', 'diff' },
-		lualine_c = { { 'filename', path = 1 } },
-		lualine_x = { 'diagnostics' },
-		lualine_y = { 'progress' },
-		lualine_z = { 'location' }
-	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { 'filename' },
-		lualine_x = { 'location' },
-		lualine_y = {},
-		lualine_z = {}
-	},
-})
+ColorMyPencils("rose-pine")
 
 --
 -- Treesitter
 --
-local langs = { "lua", "rust", "c", "cpp", "odin", "go", "python", "toml", "zig", "fish", "org" }
 
 add 'nvim-treesitter/nvim-treesitter'
 add 'nvim-treesitter/nvim-treesitter-textobjects'
+add 'Wansmer/treesj'
 
 local group = vim.api.nvim_create_augroup("GraeTreesitter", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
@@ -163,27 +167,21 @@ require("nvim-treesitter-textobjects").setup({
 	select = {
 		enable = true,
 		lookahead = true,
-		keymaps = {
-			["af"] = "@function.outer",
-			["if"] = "@function.inner",
-		},
+		keymaps = { ["af"] = "@function.outer", ["if"] = "@function.inner" },
 	},
 })
+
+require('treesj').setup({})
 
 --
 -- LSP
 --
-local servers = { "lua_ls", "ts_ls", "gopls", "pyright", "rust_analyzer", "ols", "zls", "zk", "taplo", "marksman" }
 
 add("neovim/nvim-lspconfig")
 add("mason-org/mason.nvim")
 add("mason-org/mason-lspconfig.nvim")
 add("saghen/blink.lib")
-add("saghen/blink.cmp", {
-	build = function()
-		require("blink.cmp").build():pwait()
-	end,
-})
+add("saghen/blink.cmp", { build = function() require("blink.cmp").build():pwait() end })
 
 require("mason").setup()
 require("mason-lspconfig").setup({ ensure_installed = servers })
@@ -191,18 +189,20 @@ require("mason-lspconfig").setup({ ensure_installed = servers })
 require("blink.cmp").setup({
 	keymap = { preset = "default", ["<CR>"] = { "accept", "fallback" }, },
 	completion = {
-		documentation = {
-			auto_show = true,
-			auto_show_delay_ms = 100,
-		}
+		documentation = { auto_show = true, auto_show_delay_ms = 100 },
 	},
 	signature = { enabled = true },
-	sources = { default = { "lsp", "path", "snippets", "buffer" } }
+	sources = {
+		default = {
+			"lsp",
+			"path",
+			"snippets",
+			"buffer",
+		}
+	}
 })
 local capabilities = require("blink.cmp").get_lsp_capabilities()
-vim.lsp.config("*", {
-	capabilities = capabilities,
-})
+vim.lsp.config("*", { capabilities = capabilities })
 
 vim.diagnostic.config({
 	virtual_text = true,
@@ -276,9 +276,6 @@ map({ "n", "x", "v" }, "<C-s>", function() require("flash").jump() end, { desc =
 
 add 'nvim-tree/nvim-web-devicons'
 
---
--- Markdown
---
 add "MeanderingProgrammer/render-markdown.nvim"
 require('render-markdown').setup({
 	code = { sign = false, width = "block", right_pad = 1 },
@@ -296,17 +293,7 @@ require("copilot").setup({
 	suggestion = {
 		enabled = false,
 		auto_trigger = true,
-		keymap = {
-			accept = "<C-y>",
-			next = "<C-e>",
-			prev = "<C-r>",
-			dismiss = "<C-=>",
-		}
 	},
-	filetypes = {
-		markdown = true,
-		help = false,
-	}
 })
 
 map('n', '<leader>A', "<Cmd>Copilot toggle<Cr>", { desc = "Toggle Copilot" })
@@ -391,4 +378,4 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
-
+require('mini.statusline').setup()

@@ -14,6 +14,8 @@ set -gx WLR_RENDERER_ALLOW_SOFTWARE 1
 
 set -x LD_LIBRARY_PATH /home/grae/.local/lib/arch-mojo $LD_LIBRARY_PATH
 
+set -gx MANPAGER 'nvim +Man!'
+
 # Pi
 fish_add_path "/home/grae/.local/share/pi-node/node-v22.23.2-linux-x64/bin"
 
