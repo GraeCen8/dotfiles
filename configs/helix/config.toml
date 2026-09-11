@@ -13,6 +13,7 @@ completion-timeout = 5
 auto-save = true
 scrolloff = 15
 completion-replace = true
+auto-info = false
 
 [editor.soft-wrap]
 enable = true
@@ -38,7 +39,6 @@ k = "normal_mode"
 d = "delete_word_backward"
 
 [keys.normal.space]
-t = ":pipe sed -e 's/- \\[ \\]/- [x]/;t' -e 's/- \\[x\\]/- [ ]/;t' -e 's/^- /- [ ] /'"
 x = ":buffer-close"
 o = ":buffer-close-others"
 

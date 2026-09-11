@@ -26,6 +26,9 @@ require("hypr.autostart")
 require("default.hypr.toggles")
 
 -- Add any other personal Hyprland configuration below.
+-- Fix Nyxt / WebKitGTK on NVIDIA + Wayland (Error 71 dispatching to Wayland display).
+-- https://wiki.archlinux.org/title/WebKitGTK#Wayland_and_NVIDIA
+hl.env("WEBKIT_DISABLE_DMABUF_RENDERER", "1")
 -- o.window("qemu", { workspace = "5" })
 
 -- Override quake console to use kitty instead of omarchy-agent.

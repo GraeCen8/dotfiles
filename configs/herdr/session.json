@@ -2,72 +2,34 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "wE",
-      "custom_name": "Work",
+      "id": "wF",
+      "custom_name": null,
       "identity_cwd": "/home/grae",
       "public_pane_numbers": {
-        "29": 2,
-        "30": 3,
-        "28": 1
+        "31": 1
       },
-      "next_public_pane_number": 4,
+      "next_public_pane_number": 2,
       "public_tab_numbers": [
-        1,
-        2,
-        3
+        1
       ],
-      "next_public_tab_number": 4,
+      "next_public_tab_number": 2,
       "tabs": [
         {
           "custom_name": null,
           "layout": {
-            "Pane": 28
+            "Pane": 31
           },
           "panes": {
-            "28": {
+            "31": {
               "cwd": "/home/grae"
             }
           },
           "zoomed": false,
-          "focused": 28,
-          "root_pane": 28
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 29
-          },
-          "panes": {
-            "29": {
-              "cwd": "/home/grae",
-              "agent_session": {
-                "source": "herdr:opencode",
-                "agent": "opencode",
-                "kind": "id",
-                "value": "ses_f87de3378ffeHtpI2JBW1k7A9t"
-              }
-            }
-          },
-          "zoomed": false,
-          "focused": 29,
-          "root_pane": 29
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 30
-          },
-          "panes": {
-            "30": {
-              "cwd": "/home/grae"
-            }
-          },
-          "zoomed": false,
-          "focused": 30,
-          "root_pane": 30
+          "focused": 31,
+          "root_pane": 31
         }
       ],
-      "active_tab": 1
+      "active_tab": 0
     }
   ],
   "active": 0,

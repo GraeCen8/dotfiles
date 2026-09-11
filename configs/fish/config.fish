@@ -19,6 +19,9 @@ set -gx MANPAGER 'nvim +Man!'
 # Pi
 fish_add_path "/home/grae/.local/share/pi-node/node-v22.23.2-linux-x64/bin"
 
+# Fix Nyxt / WebKitGTK on NVIDIA + Wayland (Error 71 dispatching to Wayland display).
+set -gx WEBKIT_DISABLE_DMABUF_RENDERER 1
+
 # Home Manager
 fish_add_path "$HOME/.nix-profile/bin"
 fish_add_path "$HOME/.local/state/nix/profiles/profile/bin"
