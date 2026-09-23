@@ -1,10 +1,10 @@
-inherits = "rose_pine"
+inherits = "kanagawa"
 
 "ui.menu" = { fg = "text", bg = "surface" }
-"ui.menu.selected" = { fg = "base", bg = "iris", modifiers = ["bold"] }
+"ui.menu.selected" = { fg = "base", bg = "red", modifiers = ["bold"] }
 "ui.menu.scroll" = { fg = "muted", bg = "surface" }
 
 "markup.normal.completion" = { fg = "text" }
-"markup.heading.completion" = { fg = "iris", modifiers = ["bold"] }
+"markup.heading.completion" = { fg = "red", modifiers = ["bold"] }
 "markup.raw.inline.completion" = { fg = "foam" }
 
