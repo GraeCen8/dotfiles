@@ -6,8 +6,8 @@ hl.config({
 --     -- No gaps between windows or borders.
     gaps_in = 3,
     gaps_out = 3,
-    border_size = 1,
-    -- layout = "scrolling",
+    border_size = 2,
+    layout = "scrolling",
   },
 })
 
@@ -41,6 +41,12 @@ hl.config({
 --     single_window_aspect_ratio = { 1, 1 },
 --   },
 -- })
+
+-- https://wiki.hypr.land/Configuring/Animations/
+-- Fast vertical slide for workspace up/down switching.
+-- Overrides Omarchy default which disables workspaces animation.
+-- slidevert auto-slides from above/below based on direction (e-1 / e+1).
+hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "easeOutQuint", style = "slidevert" })
 
 -- https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/
 -- hl.config({

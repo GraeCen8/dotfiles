@@ -96,9 +96,11 @@ o.bind("SUPER + CTRL + RIGHT", "Lock system", "omarchy-system-lock")
 -- 4. Workspace navigation, top-to-bottom (mango's viewtoleft/viewtoright).
 -- ==========================================================================
 
--- SUPER+U = up a workspace (previous), SUPER+I = down a workspace (next)
-o.bind("SUPER + U", "Previous workspace (up)", hl.dsp.focus({ workspace = "e-1" }))
-o.bind("SUPER + I", "Next workspace (down)", hl.dsp.focus({ workspace = "e+1" }))
+-- SUPER+I = up a workspace (previous), SUPER+U = down a workspace (next)
+-- r-1 / r+1 = strict numeric step including empty workspaces
+-- (e-1 / e+1 would skip empty workspaces, e.g. 3 -> 1 instead of 3 -> 4)
+o.bind("SUPER + I", "Previous workspace (up)", hl.dsp.focus({ workspace = "r-1" }))
+o.bind("SUPER + U", "Next workspace (down)", hl.dsp.focus({ workspace = "r+1" }))
 
 -- ==========================================================================
 -- 5. Scrolling layout extras (mango's switch_proportion_preset on SUPER+R).
@@ -114,3 +116,4 @@ o.bind("SUPER + PERIOD", "Expel bottom window from stack", hl.dsp.layout("expel"
 
 -- other app launcher menu
 o.bind("SUPER + D", "Apps menu", "omarchy-menu toggle apps")
+
