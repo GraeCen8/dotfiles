@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="dark">
+<title>~</title>
+<style>
+  :root {
+    --bg: #0e0e14;
+    --panel: #13141c;
+    --card: #24283b;
+    --fg: #a9b1d6;
+    --dim: #565f89;
+    --accent: #7aa2f7;
+    --sel: #292e42;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1rem;
+    gap: 1rem;
+  }
+  .wrap { width: min(960px, 96vw); display: flex; flex-direction: column; gap: 1rem; }
+  .timebox {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    flex: 1; padding: 1rem;
+  }
+  #clock { font-size: 3rem; letter-spacing: 0.1em; }
+  #date { color: var(--dim); font-size: 0.85rem; margin-top: 0.2rem; }
+  .widgets { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; align-items: stretch; }
+  .midcol { display: flex; flex-direction: column; gap: 1rem; }
+  .notes-panel { display: flex; flex-direction: column; flex: 1; }
+  .panel { background: var(--panel); border: 1px solid var(--sel); }
+  .panel h2 {
+    font-size: 0.75rem; letter-spacing: 0.25em; color: var(--accent);
+    padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--sel); background: var(--bg);
+  }
+  #cal { padding: 0.6rem 0.8rem; }
+  #cal table { width: 100%; border-collapse: collapse; font-size: 0.8rem; text-align: center; }
+  #cal th { color: var(--dim); font-weight: normal; padding: 0.25rem; }
+  #cal td { padding: 0.25rem; }
+  #cal td.today { background: var(--accent); color: var(--bg); }
+  .cal-title { font-size: 0.8rem; margin-bottom: 0.4rem; }
+  .stat {
+    display: flex; justify-content: space-between;
+    padding: 0.45rem 0.8rem; font-size: 0.8rem; border-bottom: 1px solid var(--bg);
+  }
+  .stat span { color: var(--dim); }
+  .stat b { font-weight: normal; }
+  .stat b.warn { color: #f9e2af; }
+  .stale { font-size: 0.65rem; color: var(--dim); padding: 0.4rem 0.8rem; }
+  .notes-head {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.75rem; letter-spacing: 0.25em; color: var(--accent);
+    padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--sel); background: var(--bg);
+  }
+  #saved { color: var(--dim); letter-spacing: 0; font-size: 0.65rem; }
+  #notes {
+    width: 100%; min-height: 10rem; flex: 1; background: var(--panel); color: var(--fg);
+    border: 0; padding: 0.6rem 0.8rem; font: inherit; font-size: 0.82rem;
+    outline: none; resize: vertical;
+  }
+  form { width: 100%; }
+  input {
+    width: 100%; background: var(--card); color: var(--fg);
+    border: 1px solid var(--sel); border-left: 4px solid var(--accent);
+    padding: 0.7rem 1rem; font: inherit; outline: none;
+  }
+  input:focus { border-color: var(--accent); border-left: 4px solid var(--accent); }
+  section { background: var(--panel); border: 1px solid var(--sel); }
+  section h2 {
+    font-size: 0.75rem; letter-spacing: 0.25em; color: var(--accent);
+    padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--sel); background: var(--bg);
+  }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .card {
+    background: var(--panel); padding: 0.7rem 0.5rem; text-align: center;
+    text-decoration: none; color: var(--fg); font-size: 0.82rem;
+    border-right: 1px solid var(--bg); border-bottom: 1px solid var(--bg);
+  }
+  .card:hover { background: var(--card); color: var(--accent); }
+  .hint { display: block; font-size: 0.65rem; color: var(--dim); margin-bottom: 0.2rem; }
+  .card:hover .hint { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="widgets">
+    <div class="panel notes-panel">
+      <div class="notes-head"><span>notes</span><span id="saved"></span></div>
+      <textarea id="notes" placeholder="scratch ..." spellcheck="false"></textarea>
+    </div>
+    <div class="midcol">
+      <div class="panel">
+        <h2>cal</h2>
+        <div id="cal"></div>
+      </div>
+      <form id="search">
+        <input id="q" type="text" placeholder="search" autocomplete="off" autofocus>
+      </form>
+      <div class="panel timebox">
+        <div id="clock">--:--</div>
+        <div id="date"></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>sys</h2>
+      <div>
+        <div class="stat"><span>kernel</span><b>7.2.5</b></div>
+        <div class="stat"><span>uptime</span><b>0h 50m</b></div>
+        <div class="stat"><span>pkgs</span><b>977</b></div>
+        <div class="stat"><span>updates</span><b>2</b></div>
+        <div class="stat"><span>battery</span><b>45% disc</b></div>
+        <div class="stat"><span>load</span><b>2.34 2.57 1.69</b></div>
+        <div class="stat"><span>mem</span><b>3G/7G</b></div>
+        <div class="stat"><span>cpu</span><b>48C</b></div>
+        <div class="stat"><span>failed s/u</span><b>0/0</b></div>
+        <div class="stat"><span>/ free</span><b>219G free</b></div>
+        <div class="stat"><span>~ free</span><b>219G free</b></div>
+        <div class="stale">snapshot 17:55 23 Sep</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  const BANGS = {
+      "!yt": "https://www.youtube.com/results?search_query={}",
+      "!apkg": "https://archlinux.org/packages/?q={}",
+      "!adoc": "https://wiki.archlinux.org/index.php?search={}",
+      "!odoc": "https://duckduckgo.com/?q=site%3Aomarchy.org%2Fmanual+{}",
+      "!aur": "https://aur.archlinux.org/packages/?K={}",
+      "!gh": "https://github.com/search?q={}&type=repositories",
+      "!w": "https://en.wikipedia.org/wiki/Special:Search?search={}",
+      "!g": "https://www.google.com/search?q={}",
+  };
+  const DEFAULT = "https://duckduckgo.com/?q={}";
+  document.getElementById("search").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const raw = document.getElementById("q").value.trim();
+    if (!raw) return;
+    const [first, ...rest] = raw.split(/\s+/);
+    if (BANGS[first] && rest.length) {
+      location.href = BANGS[first].replace("{}", encodeURIComponent(rest.join(" ")));
+    } else if (BANGS[first]) {
+      location.href = BANGS[first].replace("{}", "");
+    } else {
+      location.href = DEFAULT.replace("{}", encodeURIComponent(raw));
+    }
+  });
+  function tick() {
+    const d = new Date();
+    document.getElementById("clock").textContent =
+      String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+    document.getElementById("date").textContent = d.toDateString();
+  }
+  function calendar() {
+    const now = new Date();
+    const y = now.getFullYear(), m = now.getMonth();
+    const months = ["january","february","march","april","may","june","july",
+                    "august","september","october","november","december"];
+    const start = (new Date(y, m, 1).getDay() + 6) % 7;
+    const days = new Date(y, m + 1, 0).getDate();
+    let h = '<div class="cal-title">' + months[m] + " " + y + "</div><table><tr><th>mo</th><th>tu</th><th>we</th><th>th</th><th>fr</th><th>sa</th><th>su</th></tr><tr>";
+    for (let i = 0; i < start; i++) h += "<td></td>";
+    for (let d = 1; d <= days; d++) {
+      h += d === now.getDate() ? '<td class="today">' + d + "</td>" : "<td>" + d + "</td>";
+      if ((start + d) % 7 === 0 && d !== days) h += "</tr><tr>";
+    }
+    document.getElementById("cal").innerHTML = h + "</tr></table>";
+  }
+  tick();
+  calendar();
+  setInterval(tick, 10000);
+  const notes = document.getElementById("notes");
+  const saved = document.getElementById("saved");
+  try {
+    notes.value = localStorage.getItem("qute-notes") || "";
+  } catch (e) {}
+  let t = null;
+  notes.addEventListener("input", () => {
+    clearTimeout(t);
+    t = setTimeout(() => {
+      try {
+        localStorage.setItem("qute-notes", notes.value);
+        const d = new Date();
+        saved.textContent = "saved " + String(d.getHours()).padStart(2, "0") +
+          ":" + String(d.getMinutes()).padStart(2, "0");
+      } catch (e) {
+        saved.textContent = "not saved (storage blocked)";
+      }
+    }, 500);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+
+[[language]]
+name = "markdown"
+language-servers = ["markdown-oxide", "marksman", "ltex-ls-plus"]
+formatter = { command = "prettier", args = ["--parser", "markdown", "--prose-wrap", "preserve"] }
+auto-format = true
+comment-tokens = ["-", "+", "*", ">", "- [ ]"]

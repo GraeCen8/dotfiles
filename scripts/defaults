@@ -1,0 +1,96 @@
+#!/bin/bash
+# defaults: make qutebrowser the default browser and helix the default editor.
+#
+# Covers XDG mime handlers, omarchy's default-editor state, the `helix`
+# command (Helix.desktop uses TryExec=helix), and the EDITOR/VISUAL/BROWSER
+# exports in the dots zsh profile.
+#
+# Idempotent: re-running when already configured changes nothing and exits 0.
+# Non-interactive and sudo-free, so it is safe via ~/dots/run-all-scripts.
+
+set -u
+
+BROWSER_DESKTOP="org.qutebrowser.qutebrowser.desktop"
+EDITOR_DESKTOP="Helix.desktop"
+EDITOR="helix"
+EDITOR_ALT="hx" # binary name some helix installs ship under
+STATE_FILE="$HOME/.local/state/omarchy/defaults/editor"
+ZPROFILE="$HOME/dots/configs/zsh/.zprofile"
+changed=0
+
+# 1. Ensure `helix` resolves. Helix.desktop declares TryExec=helix, but some
+#    installs only provide `hx`, so shim it user-locally (no sudo).
+if ! command -v "$EDITOR" >/dev/null 2>&1 && command -v "$EDITOR_ALT" >/dev/null 2>&1; then
+  mkdir -p "$HOME/.local/bin"
+  ln -sf "$(command -v "$EDITOR_ALT")" "$HOME/.local/bin/$EDITOR"
+  echo "defaults: linked ~/.local/bin/helix -> $(command -v "$EDITOR_ALT")"
+  changed=1
+fi
+
+# 2. Default browser (XDG). $BROWSER must be unset: xdg-settings refuses to
+#    change anything while it is set and prefers it over mime config on read.
+if [[ "$(env -u BROWSER xdg-settings check default-web-browser "$BROWSER_DESKTOP" 2>/dev/null)" != "yes" ]]; then
+  env -u BROWSER xdg-settings set default-web-browser "$BROWSER_DESKTOP"
+  echo "defaults: default browser -> $BROWSER_DESKTOP"
+  changed=1
+fi
+for mime in text/html x-scheme-handler/http x-scheme-handler/https x-scheme-handler/about; do
+  if [[ "$(xdg-mime query default "$mime" 2>/dev/null)" != "$BROWSER_DESKTOP" ]]; then
+    xdg-mime default "$BROWSER_DESKTOP" "$mime"
+    echo "defaults: $mime -> $BROWSER_DESKTOP"
+    changed=1
+  fi
+done
+
+# 3a. Default editor for omarchy. Same file `omarchy-default-editor helix`
+#     writes; writing it directly keeps re-runs notification-free no-ops.
+if [[ ! -f "$STATE_FILE" ]] || [[ "$(cat "$STATE_FILE")" != "$EDITOR" ]]; then
+  mkdir -p "$(dirname "$STATE_FILE")"
+  printf '%s\n' "$EDITOR" >"$STATE_FILE"
+  echo "defaults: omarchy default editor -> $EDITOR"
+  changed=1
+fi
+
+# 3b. Default editor for XDG: every type Helix.desktop claims (covers
+#     text/plain, which otherwise stays on nvim.desktop).
+editor_mimes="text/plain"
+if [[ -f "/usr/share/applications/$EDITOR_DESKTOP" ]]; then
+  editor_mimes="$(grep -m1 '^MimeType=' "/usr/share/applications/$EDITOR_DESKTOP" | cut -d= -f2- | tr ';' ' ')"
+fi
+for mime in $editor_mimes; do
+  if [[ "$(xdg-mime query default "$mime" 2>/dev/null)" != "$EDITOR_DESKTOP" ]]; then
+    xdg-mime default "$EDITOR_DESKTOP" "$mime"
+    echo "defaults: $mime -> $EDITOR_DESKTOP"
+    changed=1
+  fi
+done
+
+# 4. Default editor/browser env vars. This file is hardlinked to
+#    ~/.config/zsh/.zprofile, so editing the dots copy updates the live one.
+if [[ -f "$ZPROFILE" ]]; then
+  set_export() { # set_export NAME VALUE
+    if grep -q "^export $1=" "$ZPROFILE"; then
+      if ! grep -q "^export $1=\"$2\"$" "$ZPROFILE"; then
+        sed -i "s|^export $1=.*|export $1=\"$2\"|" "$ZPROFILE"
+        echo "defaults: $ZPROFILE: $1 -> $2"
+        changed=1
+      fi
+    elif [[ "$1" == "VISUAL" ]] && grep -q '^export EDITOR=' "$ZPROFILE"; then
+      sed -i "/^export EDITOR=/a export $1=\"$2\"" "$ZPROFILE"
+      echo "defaults: $ZPROFILE: $1 -> $2"
+      changed=1
+    else
+      printf 'export %s="%s"\n' "$1" "$2" >>"$ZPROFILE"
+      echo "defaults: $ZPROFILE: $1 -> $2"
+      changed=1
+    fi
+  }
+  set_export EDITOR "$EDITOR"
+  set_export VISUAL "$EDITOR"
+  set_export BROWSER qutebrowser
+fi
+
+if [[ "$changed" -eq 0 ]]; then
+  echo "defaults: qutebrowser + helix already configured; nothing to do."
+fi
+exit 0

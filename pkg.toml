@@ -1,0 +1,22 @@
+[config]
+mode = "pkg"
+stow = [ "zsh" ]       # these configs mirror into $HOME (GNU stow style)
+# mode = "stow"        # make every config stow-style
+
+[[system]]
+name = "base"
+packages = [
+    "helix",
+    "pass",
+    "python-adblock",
+    "qutebrowser",
+    "zsh",
+]
+
+
+[hooks]
+post = [ "~/dots/run-all-scripts" ]
+
+
+# [git]
+# url = "git@github.com:you/dots.git"

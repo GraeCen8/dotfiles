@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+cd ~/.config/st
+sudo echo ""
+sudo make install >> /dev/null
+cd ~
+
