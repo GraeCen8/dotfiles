@@ -66,9 +66,21 @@ bindkey '^R' fzf-history-widget
 #bindkey '^f' openfff
 
 
-# set up prompt (Rosé Pine dark sections, no time, ends with space)
+# set up prompt (Tokyo Night Moon, no background, bracketed segments)
+setopt prompt_subst
 NEWLINE=$'\n'
-PROMPT="${NEWLINE}%K{#26233a}%F{#ebbcba} %n %K{#1f1d2e}%F{#9ccfd8} %~ %f%k "
+PROMPT="${NEWLINE}%F{#414868}[%f%F{#7dcfff}%~%f%F{#414868}]%f\${GIT_SEG} %F{#bb9af7}❯%f "
+
+# git segment, built in precmd so the prompt itself never forks
+__git_prompt() {
+  local branch
+  branch=$(git symbolic-ref --quiet --short HEAD 2>/dev/null) \
+    || branch=$(git rev-parse --short HEAD 2>/dev/null) || { GIT_SEG=''; return }
+  GIT_SEG=" %F{#414868}[%f%F{#73daca}${branch}%f"
+  [[ -n $(git status --porcelain 2>/dev/null) ]] && GIT_SEG+="%F{#e0af68} ●%f"
+  GIT_SEG+="%F{#414868}]%f"
+}
+precmd_functions+=(__git_prompt)
 # PROMPT="${NEWLINE}%K{#2E3440}%F{#E5E9F0}$(date +%_I:%M%P) %K{#3b4252}%F{#ECEFF4} %n %K{#4c566a} %~ %f%k ❯ " # nord theme (old, had time + ❯)
 # PROMPT="${NEWLINE}%K{#32302f}%F{#d5c4a1} $0 %K{#3c3836}%F{#d5c4a1} %n %K{#504945} %~ %f%k ❯ " # warmer theme
 # PROMPT="${NEWLINE}%K{$COL0}%F{$COL1}$(date +%_I:%M%P) %K{$COL0}%F{$COL2} %n %K{$COL3} %~ %f%k ❯ " # pywal colors, from postrun script
@@ -79,7 +91,7 @@ PROMPT="${NEWLINE}%K{#26233a}%F{#ebbcba} %n %K{#1f1d2e}%F{#9ccfd8} %~ %f%k "
 # fish-like autocomplete toggle (1=on, 0=off)
 FISH_AUTOSUGGEST=1
 if (( FISH_AUTOSUGGEST )); then
-  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#6e6a86' # Rosé Pine muted
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#565f89' # Tokyo Night Moon comment/dim
   ZSH_AUTOSUGGEST_STRATEGY=(history completion)
   _autosuggest_src="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
   [[ -f "$_autosuggest_src" ]] || _autosuggest_src="/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh"

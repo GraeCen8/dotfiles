@@ -1,0 +1,5 @@
+# Omarchy theme palette (16 colors, cursor, selection)
+config-file = ?"/home/grae/.local/state/omarchy/current/theme/ghostty.conf"
+
+background = #0e0e14
+background-opacity = 0.9

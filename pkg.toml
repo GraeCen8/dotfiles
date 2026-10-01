@@ -11,6 +11,10 @@ packages = [
     "python-adblock",
     "qutebrowser",
     "zsh",
+    # [git]
+    # url = "git@github.com:you/dots.git"
+    # [git]
+    # url = "git@github.com:you/dots.git"
 ]
 
 
