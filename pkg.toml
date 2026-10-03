@@ -1,0 +1,47 @@
+[config]
+mode = "pkg"
+# stow = []       # these configs mirror into $HOME (GNU stow style)
+# mode = "stow"        # make every config stow-style
+
+
+# [git]
+# url = "git@github.com:you/dots.git"
+
+[[system]]
+name = "base"
+packages = [
+    "base-devel",
+    "btop",
+    "eza",
+    "fastfetch",
+    "foot",
+    "fuzzel",
+    "fzf",
+    "git",
+    "grim",
+    "helix",
+    "lazygit",
+    "lua-language-server",
+    "mangowm",
+    "neovim",
+    "opencode",
+    "python-adblock",
+    "python-pip",
+    "qutebrowser",
+    "slurp",
+    "swaybg",
+    "swaylock",
+    "tmux",
+    "tree-sitter",
+    "tree-sitter-cli",
+    "ttf-jetbrains-mono-nerd",
+    "waybar",
+    "wl-clipboard",
+    "wmenu",
+    "zoxide",
+    "zsh",
+    "zsh-syntax-highlighting",
+]
+
+[hooks]
+post = []
