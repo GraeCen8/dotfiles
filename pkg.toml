@@ -11,11 +11,10 @@ mode = "pkg"
 name = "base"
 packages = [
     "base-devel",
+    "bat",
     "btop",
     "eza",
     "fastfetch",
-    "foot",
-    "fuzzel",
     "fzf",
     "git",
     "grim",
@@ -23,7 +22,7 @@ packages = [
     "imv",
     "lazygit",
     "lua-language-server",
-    "mangowm",
+    "ly",
     "neovim",
     "opencode",
     "python-adblock",
@@ -36,8 +35,10 @@ packages = [
     "tree-sitter",
     "tree-sitter-cli",
     "ttf-jetbrains-mono-nerd",
-    "waybar",
+    "wayland",
+    "wayland-protocols",
     "wl-clipboard",
+    "wlroots0.20",
     "wmenu",
     "zoxide",
     "zsh",
@@ -45,4 +46,4 @@ packages = [
 ]
 
 [hooks]
-post = []
+post = [ "~/dots/scripts/rebuild.sh" ]

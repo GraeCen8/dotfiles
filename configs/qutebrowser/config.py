@@ -199,7 +199,6 @@ c.fonts.completion.entry = "11pt JetBrainsMono Nerd Font"
 c.fonts.prompts = "11pt JetBrainsMono Nerd Font"
 
 # Downloads
-c.downloads.location.directory = "~/Downloads"
 c.downloads.location.prompt = False
 c.downloads.remove_finished = 5000
 
