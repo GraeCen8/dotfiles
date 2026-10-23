@@ -6,8 +6,7 @@
 # default programs
 export EDITOR="helix"
 export VISUAL="helix"
-export TERM="st-wl-256color"
-export TERMINAL="st"
+export TERMINAL="foot"
 export MUSPLAYER="termusic"
 export BROWSER="qutebrowser"
 export BROWSER2="librewolf"

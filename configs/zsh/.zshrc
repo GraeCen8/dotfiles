@@ -36,8 +36,8 @@ stty stop undef # disable accidental ctrl s
 # history opts
 HISTSIZE=1000000
 SAVEHIST=1000000
-HISTFILE="$XDG_CACHE_HOME/zsh_history" # move histfile to cache
-HISTCONTROL=ignoreboth # consecutive duplicates & commands starting with space are not saved
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh_history" # move histfile to cache
+setopt hist_ignore_dups hist_ignore_space hist_reduce_blanks # consecutive duplicates & commands starting with space are not saved
 
 
 # fzf setup
@@ -47,9 +47,6 @@ source <(fzf --zsh) # allow for fzf history widget
 # binds
 bindkey "^a" beginning-of-line
 bindkey "^e" end-of-line
-bindkey "^k" kill-line
-bindkey "^j" backward-word
-bindkey "^k" forward-word
 bindkey "^H" backward-kill-word
 # ctrl J & K for going up and down in prev commands
 bindkey "^J" history-search-forward
@@ -75,7 +72,7 @@ PROMPT="${NEWLINE}%F{#414868}[%f%F{#7dcfff}%~%f%F{#414868}]%f\${GIT_SEG} %F{#bb9
 __git_prompt() {
   local branch
   branch=$(git symbolic-ref --quiet --short HEAD 2>/dev/null) \
-    || branch=$(git rev-parser--short HEAD 2>/dev/null) || { GIT_SEG=''; return }
+    || branch=$(git rev-parse --short HEAD 2>/dev/null) || { GIT_SEG=''; return }
   GIT_SEG=" %F{#414868}[%f%F{#73daca}${branch}%f"
   [[ -n $(git status --porcelain 2>/dev/null) ]] && GIT_SEG+="%F{#e0af68} ●%f"
   GIT_SEG+="%F{#414868}]%f"
