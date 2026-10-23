@@ -1,14 +1,20 @@
 [config]
 mode = "pkg"
-# stow = []       # these configs mirror into $HOME (GNU stow style)
-# mode = "stow"        # make every config stow-style
 
-# [[system]]
-# name = "base"
-# packages = []
+# gaming: Steam + Proton runtime tuning. Needs [multilib] enabled (steam + lib32-*)
+# and the lib32 nvidia driver stack from ../pc.
+# Steam setup: enable "Steam Play for all other titles" so Windows games pick up Proton;
+# launch options: gamemoderun %command% / mangohud %command% / both, space separated.
+[[system]]
+name = "gaming"
+packages = [
+    "steam",          # gaming client (multilib) + steam-devices controllers rules
+    "gamemode",       # Feral GameMode governor/nice tweaks
+    "lib32-gamemode", # GameMode for 32-bit game binaries
+    "mangohud",       # performance overlay (mangohud %command%)
+    "lib32-mangohud", # MangoHud for 32-bit games
+    "vulkan-tools",   # vulkaninfo sanity checks for Proton's Vulkan path
+]
 
 # [hooks]
 # post = []
-
-# [git]
-# url = "git@github.com:you/dots.git"

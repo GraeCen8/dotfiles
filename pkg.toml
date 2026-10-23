@@ -44,6 +44,7 @@ packages = [
     "ttf-jetbrains-mono-nerd",
     "wayland",
     "wayland-protocols",
+    "wiremix",
     "wl-clipboard",
     "wlroots0.20",
     "wmenu",
@@ -51,16 +52,11 @@ packages = [
     "xorg-xwayland",
     "zoxide",
     "zsh",
-    # nested roots: machine-specific dirs, each a full root with its own pkg.toml + configs/
-    # (see pkg docs/configuration.md: modules = "Top-level directories that are their own roots")
     "zsh-syntax-highlighting",
+    # [hooks]
+    # post = [ "~/dots/scripts/rebuild.sh" ]  # slstatus rebuild; run manually when needed
 ]
-
-# nested roots: machine-specific dirs, each a full root with its own pkg.toml + configs/
-# (see pkg docs/configuration.md: modules = "Top-level directories that are their own roots")
-[[system]]
-name = "modules"
-modules = ["pc"]
+modules = ["pc", "gaming"]
 
 # [hooks]
 # post = [ "~/dots/scripts/rebuild.sh" ]  # slstatus rebuild; run manually when needed

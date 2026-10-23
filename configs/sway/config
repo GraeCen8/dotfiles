@@ -22,9 +22,9 @@ focus_follows_mouse no
 gaps inner 7
 gaps outer 4
 
-# this machine's display: AOC C27G4Z on HDMI-A-1 (only machine-specific line here; see pc/pkg.toml)
-# EDID offers 240/144/120/60 — no 180, so per the ask this runs at 120Hz
+# this machine's displays: AOC C27G4Z pair (see pc/pkg.toml)
 output HDMI-A-1 mode 1920x1080@240.003Hz
+output DP-3 mode 1920x1080@280.003Hz
 
 # spawn
 bindsym $mod+Return exec $term

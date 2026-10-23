@@ -3,6 +3,7 @@ mode = "pkg"
 
 # GPU: NVIDIA RTX 4060 (Ada). nvidia-utils pulls egl-wayland/egl-gbm/egl-x11 + jemalloc as deps.
 # Non-package setup this machine needs (applied outside pkg mgmt):
+#   /etc/pacman.conf               -> [multilib] enabled (steam + lib32-* live there)
 #   /etc/modprobe.d/nouveau.conf    -> blacklist nouveau
 #   /etc/modprobe.d/nvidia-drm.conf -> options nvidia_drm modeset=1 fbdev=1
 #   /etc/environment                -> SWAY_UNSUPPORTED_GPU=true (silences sway's nvidia nagbar on every launch)
@@ -10,8 +11,9 @@ mode = "pkg"
 [[system]]
 name = "pc"
 packages = [
-    "nvidia-open",  
-    "nvidia-utils", 
+    "nvidia-open",         # open-source kernel modules (Turing+; takes the GPU away from nouveau)
+    "nvidia-utils",        # GLX/EGL/Vulkan userspace + nvidia-smi
+    "lib32-nvidia-utils",  # 32-bit NVIDIA GL/Vulkan — required for Proton/DXVK games
 ]
 
 # [hooks]
