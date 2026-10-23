@@ -10,11 +10,13 @@ mode = "pkg"
 [[system]]
 name = "base"
 packages = [
+    "autotiling",
     "base-devel",
     "bat",
     "btop",
     "eza",
     "fastfetch",
+    "foot",
     "fzf",
     "git",
     "grim",
@@ -29,7 +31,10 @@ packages = [
     "python-pip",
     "qutebrowser",
     "slurp",
+    "steam",
+    "sway",
     "swaybg",
+    "swayidle",
     "swaylock",
     "tmux",
     "tree-sitter",
@@ -40,6 +45,8 @@ packages = [
     "wl-clipboard",
     "wlroots0.20",
     "wmenu",
+    "xdg-desktop-portal-wlr",
+    "xorg-xwayland",
     "zoxide",
     "zsh",
     "zsh-syntax-highlighting",
