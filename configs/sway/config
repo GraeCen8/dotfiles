@@ -1,0 +1,122 @@
+# sway config
+
+exec autotiling
+exec sway gaps inner 7
+exec sway gaps outer 5
+
+set $mod Mod4
+set $term foot
+set $browser qutebrowser
+set $menu wmenu-run -f "JetBrainsMono Nerd Font Mono Bold 12" -n "#f2f4f8" -N "#161616" -m "#161616" -M "#78a9ff" -s "#161616" -S "#78a9ff"
+
+set $snip	/home/grae/dots/scripts/snip.sh
+set $lock	/home/grae/dots/scripts/lock.sh
+set $wall	/home/grae/dots/scripts/wall.sh
+set $power	/home/grae/dots/scripts/power.sh
+
+font JetBrainsMono Nerd Font Mono 12
+
+hide_edge_borders smart
+default_border pixel 1
+default_floating_border pixel 1
+focus_follows_mouse no
+
+# spawn
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu
+bindsym $mod+space exec $menu
+bindsym $mod+q exec $browser
+bindsym $mod+w kill
+bindsym $mod+Shift+e exec swaymsg exit
+
+# focus / move
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# splits / layouts
+bindsym $mod+a splith
+bindsym $mod+z splitv
+bindsym $mod+s layout stacking
+bindsym $mod+m layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+
+# resize
+bindsym $mod+r mode "resize"
+mode "resize" {
+	bindsym l resize shrink width 40 px
+	bindsym k resize grow height 40 px
+	bindsym j resize shrink height 40 px
+	bindsym h resize grow width 40 px
+	bindsym Left resize shrink width 40 px
+	bindsym Down resize grow height 40 px
+	bindsym Up resize shrink height 40 px
+	bindsym Right resize grow width 40 px
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+# workspaces
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Tab workspace back_and_forth
+
+# bar toggle
+bindsym $mod+Shift+b bar mode toggle
+
+# scripts
+bindsym Print exec $snip
+bindsym $mod+Shift+w exec $wall
+bindsym Mod1+l exec $lock
+bindsym $mod+Backspace exec $power
+bindsym $mod+Escape exec $power
+
+bar {
+	position top
+	status_command slstatus -s
+	mode dock
+	colors {
+		background #161616
+		statusline #f2f4f8
+		focused_workspace  #161616 #161616 #78a9ff
+		inactive_workspace #161616 #161616 #565656
+		urgent_workspace   #161616 #161616 #fa4d56
+	}
+}
+
+exec tmux new -S work
+exec foot
+
