@@ -19,12 +19,25 @@ default_border pixel 1
 default_floating_border pixel 1
 focus_follows_mouse no
 
-gaps inner 7
+gaps inner 4
 gaps outer 4
 
 # this machine's displays: AOC C27G4Z pair (see pc/pkg.toml)
 output HDMI-A-1 mode 1920x1080@240.003Hz
 output DP-3 mode 1920x1080@280.003Hz
+
+# workspace sets: 1–5 live on HDMI-A-1, 6–10 on DP-3
+# (a number can only belong to one output, so 5 stays on the left)
+workspace 1 output HDMI-A-1
+workspace 2 output HDMI-A-1
+workspace 3 output HDMI-A-1
+workspace 4 output HDMI-A-1
+workspace 5 output HDMI-A-1
+workspace 6 output DP-3
+workspace 7 output DP-3
+workspace 8 output DP-3
+workspace 9 output DP-3
+workspace 10 output DP-3
 
 # spawn
 bindsym $mod+Return exec $term
