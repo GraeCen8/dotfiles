@@ -1,8 +1,6 @@
 # sway config
 
 exec autotiling
-exec sway gaps inner 7
-exec sway gaps outer 5
 
 set $mod Mod4
 set $term foot
@@ -20,6 +18,9 @@ hide_edge_borders smart
 default_border pixel 1
 default_floating_border pixel 1
 focus_follows_mouse no
+
+gaps inner 7
+gaps outer 5
 
 # spawn
 bindsym $mod+Return exec $term
