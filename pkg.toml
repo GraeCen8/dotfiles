@@ -19,6 +19,7 @@ packages = [
     "foot",
     "fzf",
     "git",
+    "github-cli",
     "grim",
     "helix",
     "imv",
