@@ -53,5 +53,11 @@ packages = [
     "zsh-syntax-highlighting",
 ]
 
+# nested roots: machine-specific dirs, each a full root with its own pkg.toml + configs/
+# (see pkg docs/configuration.md: modules = "Top-level directories that are their own roots")
+[[system]]
+name = "modules"
+modules = ["pc"]
+
 [hooks]
 post = [ "~/dots/scripts/rebuild.sh" ]
