@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
-"""Generate qutebrowser startpage dashboard from the current Omarchy palette.
+"""Generate the qutebrowser startpage dashboard (Oxocarbon Dark).
 
-Reads:  ~/.local/state/omarchy/current/theme/colors.toml
+Palette is hardcoded here, exactly matching config.py and the rest of
+the system (dwl/sway/foot/tmux/wmenu).
+
 Writes: startpage.html (next to this script)
 
 EDIT YOUR LINKS in the CATEGORIES list below, then re-run:
     python3 generate-startpage.py
-It re-runs automatically on `omarchy theme set` (theme-set hook) and
-every 10 min via the qute-startpage systemd user timer, so theme and
-stats stay fresh.
 """
 
 import os
 import shutil
 import subprocess
-import tomllib
 from datetime import datetime
 
 # --- Link sections disabled (user removed them 2026-09-23).
@@ -34,34 +32,31 @@ BANGS = {
 }
 DEFAULT_SEARCH = "https://duckduckgo.com/?q={}"
 
-DEFAULTS = {
+PALETTE = {
     "mode": "dark",
-    "accent": "#89b4fa",
-    "selection": "#45475a",
-    "muted": "#585b70",
-    "background": "#1e1e2e",
-    "dark_background": "#161622",
-    "darker_background": "#101019",
-    "lighter_background": "#313244",
-    "foreground": "#cdd6f4",
-    "dark_foreground": "#6c7086",
-    "light_foreground": "#bac2de",
-    "bright_foreground": "#cdd6f4",
+    "accent": "#78a9ff",
+    "selection": "#393939",
+    "muted": "#565656",
+    "background": "#161616",
+    "dark_background": "#262626",
+    "darker_background": "#161616",
+    "lighter_background": "#393939",
+    "foreground": "#dde1e6",
+    "dark_foreground": "#565656",
+    "light_foreground": "#dde1e6",
+    "bright_foreground": "#f2f4f8",
+    "red": "#fa4d56",
+    "yellow": "#82cfff",
+    "orange": "#be95ff",
+    "green": "#42be65",
+    "cyan": "#3ddbd9",
+    "blue": "#33b1ff",
+    "magenta": "#ee5396",
 }
 
 
 def load_palette():
-    pal = dict(DEFAULTS)
-    path = os.path.expanduser("~/.local/state/omarchy/current/theme/colors.toml")
-    try:
-        with open(path, "rb") as f:
-            data = tomllib.load(f)
-        for k in pal:
-            if k in data:
-                pal[k] = data[k]
-    except (FileNotFoundError, OSError, tomllib.TOMLDecodeError):
-        pass
-    return pal
+    return dict(PALETTE)
 
 
 def _run(cmd, timeout=30):
@@ -236,7 +231,7 @@ def main():
   }}
   .stat span {{ color: var(--dim); }}
   .stat b {{ font-weight: normal; }}
-  .stat b.warn {{ color: {p.get("yellow", "#f9e2af")}; }}
+  .stat b.warn {{ color: {p["yellow"]}; }}
   .stale {{ font-size: 0.65rem; color: var(--dim); padding: 0.4rem 0.8rem; }}
   .notes-head {{
     display: flex; justify-content: space-between; align-items: center;

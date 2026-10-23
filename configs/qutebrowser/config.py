@@ -1,51 +1,31 @@
-# qutebrowser config — themed from Omarchy
-# Reads the staged Omarchy palette on every load, so `:config-source`
-# or a restart picks up `omarchy theme set <name>`.
-# Staged palette is always here after a theme is applied:
-#   ~/.local/state/omarchy/current/theme/colors.toml
-
-import os
-import tomllib
+# qutebrowser config — Oxocarbon Dark
+# Same palette as dwl/sway/foot/tmux/wmenu, hardcoded to match there:
+#   bg #161616  surface #262626  border #393939  dim #565656
+#   fg #dde1e6  bright #f2f4f8   accent #78a9ff  urgent #fa4d56
 
 config.load_autoconfig()
 
-
-def _load_omarchy_palette():
-    defaults = {
-        "mode": "dark",
-        "accent": "#89b4fa",
-        "selection": "#45475a",
-        "muted": "#585b70",
-        "background": "#1e1e2e",
-        "dark_background": "#161622",
-        "darker_background": "#101019",
-        "lighter_background": "#313244",
-        "foreground": "#cdd6f4",
-        "dark_foreground": "#6c7086",
-        "light_foreground": "#bac2de",
-        "bright_foreground": "#cdd6f4",
-        "red": "#f38ba8",
-        "yellow": "#f9e2af",
-        "orange": "#fab387",
-        "green": "#a6e3a1",
-        "cyan": "#94e2d5",
-        "blue": "#89b4fa",
-        "magenta": "#f5c2e7",
-    }
-    path = os.path.expanduser("~/.local/state/omarchy/current/theme/colors.toml")
-    try:
-        with open(path, "rb") as f:
-            data = tomllib.load(f)
-        for k in defaults:
-            if k in data:
-                defaults[k] = data[k]
-        defaults["mode"] = data.get("mode", defaults["mode"])
-    except (FileNotFoundError, OSError, tomllib.TOMLDecodeError):
-        pass
-    return defaults
-
-
-p = _load_omarchy_palette()
+p = {
+    "mode": "dark",
+    "accent": "#78a9ff",
+    "selection": "#393939",
+    "muted": "#565656",
+    "background": "#161616",
+    "dark_background": "#262626",
+    "darker_background": "#161616",
+    "lighter_background": "#393939",
+    "foreground": "#dde1e6",
+    "dark_foreground": "#565656",
+    "light_foreground": "#dde1e6",
+    "bright_foreground": "#f2f4f8",
+    "red": "#fa4d56",
+    "yellow": "#82cfff",
+    "orange": "#be95ff",
+    "green": "#42be65",
+    "cyan": "#3ddbd9",
+    "blue": "#33b1ff",
+    "magenta": "#ee5396",
+}
 
 bg = p["background"]
 bg_dark = p["dark_background"]
@@ -106,18 +86,18 @@ c.colors.tabs.odd.bg = bg_dark
 c.colors.tabs.odd.fg = fg_dim
 c.colors.tabs.even.bg = bg_dark
 c.colors.tabs.even.fg = fg_dim
-c.colors.tabs.selected.odd.bg = bg
-c.colors.tabs.selected.odd.fg = fg_bright
-c.colors.tabs.selected.even.bg = bg
-c.colors.tabs.selected.even.fg = fg_bright
+c.colors.tabs.selected.odd.bg = accent
+c.colors.tabs.selected.odd.fg = bg
+c.colors.tabs.selected.even.bg = accent
+c.colors.tabs.selected.even.fg = bg
 c.colors.tabs.pinned.odd.bg = bg_dark
 c.colors.tabs.pinned.odd.fg = fg
 c.colors.tabs.pinned.even.bg = bg_dark
 c.colors.tabs.pinned.even.fg = fg
-c.colors.tabs.pinned.selected.odd.bg = bg
-c.colors.tabs.pinned.selected.odd.fg = fg_bright
-c.colors.tabs.pinned.selected.even.bg = bg
-c.colors.tabs.pinned.selected.even.fg = fg_bright
+c.colors.tabs.pinned.selected.odd.bg = accent
+c.colors.tabs.pinned.selected.odd.fg = bg
+c.colors.tabs.pinned.selected.even.bg = accent
+c.colors.tabs.pinned.selected.even.fg = bg
 c.colors.tabs.indicator.start = accent
 c.colors.tabs.indicator.stop = accent
 c.colors.tabs.indicator.error = p["red"]
