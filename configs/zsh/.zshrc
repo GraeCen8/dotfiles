@@ -78,6 +78,12 @@ __git_prompt() {
   GIT_SEG+="%F{#414868}]%f"
 }
 precmd_functions+=(__git_prompt)
+
+# OSC 7: report cwd to the terminal; foot's spawn-terminal (new terminal) opens in this dir
+__osc7() {
+  printf '\e]7;file://%s%s\a' "$HOST" "$PWD"
+}
+precmd_functions+=(__osc7)
 # PROMPT="${NEWLINE}%K{#2E3440}%F{#E5E9F0}$(date +%_I:%M%P) %K{#3b4252}%F{#ECEFF4} %n %K{#4c566a} %~ %f%k ❯ " # nord theme (old, had time + ❯)
 # PROMPT="${NEWLINE}%K{#32302f}%F{#d5c4a1} $0 %K{#3c3836}%F{#d5c4a1} %n %K{#504945} %~ %f%k ❯ " # warmer theme
 # PROMPT="${NEWLINE}%K{$COL0}%F{$COL1}$(date +%_I:%M%P) %K{$COL0}%F{$COL2} %n %K{$COL3} %~ %f%k ❯ " # pywal colors, from postrun script

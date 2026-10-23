@@ -24,6 +24,7 @@ packages = [
     "grim",
     "helix",
     "imv",
+    "just",
     "lazygit",
     "lua-language-server",
     "ly",
@@ -50,6 +51,8 @@ packages = [
     "xorg-xwayland",
     "zoxide",
     "zsh",
+    # nested roots: machine-specific dirs, each a full root with its own pkg.toml + configs/
+    # (see pkg docs/configuration.md: modules = "Top-level directories that are their own roots")
     "zsh-syntax-highlighting",
 ]
 
