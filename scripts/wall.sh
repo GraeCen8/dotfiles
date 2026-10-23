@@ -11,7 +11,7 @@ walls="$HOME/dots/walls"
 choice=$(for f in "$walls"/*; do
 	[ -f "$f" ] && basename "$f"
 done | wmenu -i -p 'wall:' \
-	-f "JetBrainsMono Nerd Font Mono Bold 16" \
+	-f "JetBrainsMono Nerd Font Mono Bold 12" \
 	-n "#f2f4f8" -N "#161616" \
 	-m "#161616" -M "#78a9ff" \
 	-s "#161616" -S "#78a9ff") || exit 0
