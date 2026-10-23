@@ -69,13 +69,13 @@ bindkey '^R' fzf-history-widget
 # set up prompt (Tokyo Night Moon, no background, bracketed segments)
 setopt prompt_subst
 NEWLINE=$'\n'
-PROMPT="${NEWLINE}%F{#414868}[%f%F{#7dcfff}%~%f%F{#414868}]%f\${GIT_SEG} %F{#bb9af7}λ%f "
+PROMPT="${NEWLINE}%F{#414868}[%f%F{#7dcfff}%~%f%F{#414868}]%f\${GIT_SEG} %F{#bb9af7}%f   "
 
 # git segment, built in precmd so the prompt itself never forks
 __git_prompt() {
   local branch
   branch=$(git symbolic-ref --quiet --short HEAD 2>/dev/null) \
-    || branch=$(git rev-parse --short HEAD 2>/dev/null) || { GIT_SEG=''; return }
+    || branch=$(git rev-parser--short HEAD 2>/dev/null) || { GIT_SEG=''; return }
   GIT_SEG=" %F{#414868}[%f%F{#73daca}${branch}%f"
   [[ -n $(git status --porcelain 2>/dev/null) ]] && GIT_SEG+="%F{#e0af68} ●%f"
   GIT_SEG+="%F{#414868}]%f"
