@@ -5,7 +5,8 @@ exec autotiling
 set $mod Mod4
 set $term foot
 set $browser qutebrowser
-set $menu wmenu-run -f "JetBrainsMono Nerd Font Mono Bold 12" -n "#f2f4f8" -N "#161616" -m "#161616" -M "#78a9ff" -s "#161616" -S "#78a9ff"
+# styled/case-insensitive inside scripts/apps.sh; $mod+d and $mod+space open it
+set $menu /home/grae/dots/scripts/apps.sh
 
 set $snip	/home/grae/dots/scripts/snip.sh
 set $lock	/home/grae/dots/scripts/lock.sh
