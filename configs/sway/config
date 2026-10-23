@@ -118,6 +118,4 @@ bar {
 	}
 }
 
-exec tmux new -S work
-exec foot
-
+exec ~/.config/sway/start.sh
