@@ -1,11 +1,10 @@
 [config]
 mode = "pkg"
 # stow = []       # these configs mirror into $HOME (GNU stow style)
-# mode = "stow"        # make every config stow-style
 
 
-# [git]
-# url = "git@github.com:you/dots.git"
+[git]
+url = "git@github.com:graecen8/dotfiles.git"
 
 [[system]]
 name = "base"
@@ -29,6 +28,7 @@ packages = [
     "lua-language-server",
     "ly",
     "neovim",
+    "niri",
     "opencode",
     "python-adblock",
     "python-pip",
@@ -42,6 +42,7 @@ packages = [
     "tree-sitter",
     "tree-sitter-cli",
     "ttf-jetbrains-mono-nerd",
+    "waybar",
     "wayland",
     "wayland-protocols",
     "wiremix",
@@ -50,13 +51,12 @@ packages = [
     "wmenu",
     "xdg-desktop-portal-wlr",
     "xorg-xwayland",
+    "zathura-pdf-mupdf",
     "zoxide",
     "zsh",
     "zsh-syntax-highlighting",
-    # [hooks]
-    # post = [ "~/dots/scripts/rebuild.sh" ]  # slstatus rebuild; run manually when needed
 ]
+
+
 modules = ["pc", "gaming"]
 
-# [hooks]
-# post = [ "~/dots/scripts/rebuild.sh" ]  # slstatus rebuild; run manually when needed

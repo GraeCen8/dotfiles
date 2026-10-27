@@ -16,19 +16,32 @@ sel_fg=161616
 tmp=$(mktemp)
 trap 'rm -f "$tmp"' EXIT
 
-for d in /usr/local/share/applications /usr/share/applications \
-	"${XDG_DATA_HOME:-$HOME/.local/share}/applications"; do
-	for f in "$d"/*.desktop; do
-		[ -f "$f" ] || continue
-		grep -qE '^(NoDisplay|Hidden)=true' "$f" && continue
-		id=${f##*/}
-		id=${id%.desktop}
-		name=$(awk -F= '/^Name=/{print $2; exit}' "$f")
-		[ -n "$name" ] && printf '%s\t%s\n' "$name" "$id" >>"$tmp"
-	done
-done
+# One awk pass over every .desktop file instead of forking grep+awk per file,
+# which used to cost most of the launcher's startup time. find -print0 |
+# xargs -0 (not shell globs) enumerates the files: missing directories don't
+# abort with "no matches found" under zsh (which yielded an empty menu), and
+# spaces in filenames like "F Product 2.desktop" don't get split. find errors
+# for nonexistent dirs are silenced; xargs -0 -r skips awk when the list is
+# empty. Files skipped: NoDisplay/Hidden=true; first Name= wins (localized
+# Name[xx] lines are ignored because they don't match /^Name[=]/).
+find /usr/local/share/applications /usr/share/applications \
+	"${XDG_DATA_HOME:-$HOME/.local/share}/applications" \
+	-maxdepth 1 -name '*.desktop' -print0 2>/dev/null |
+	xargs -0 -r awk '
+BEGINFILE { hide = 0; name = "" }
+/^NoDisplay=true/ || /^Hidden=true/ { hide = 1; nextfile }
+/^Name=/ { if (name == "") { sub(/^Name=[ \t]*/, ""); name = $0 } }
+ENDFILE {
+	if (!hide && name != "") {
+		id = FILENAME
+		sub(/\.desktop$/, "", id)
+		sub(/.*\//, "", id)
+		printf "%s\t%s\n", name, id
+	}
+}
+' | sort -u >"$tmp"
 
-choice=$(cut -f1 "$tmp" | sort |
+choice=$(cut -f1 "$tmp" |
 	wmenu -i -p apps -f "$menu_font" \
 		-N "$normal_bg" -n "$normal_fg" \
 		-M "$want_bg" -m "$want_fg" \

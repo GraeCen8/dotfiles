@@ -141,7 +141,7 @@ bindsym $mod+Shift+b bar mode toggle
 # scripts
 bindsym Print exec $snip
 bindsym $mod+Shift+w exec $wall
-bindsym Mod1+l exec $lock
+bindsym $mod+Mod1+l exec $lock
 bindsym $mod+Backspace exec $power
 bindsym $mod+Escape exec $power
 

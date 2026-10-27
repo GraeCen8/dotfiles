@@ -41,7 +41,8 @@
 		int cap_perc;
 		char path[PATH_MAX];
 
-		if (esnprintf(path, sizeof(path), POWER_SUPPLY_CAPACITY, bat) < 0)
+		if (esnprintf(path, sizeof(path), POWER_SUPPLY_CAPACITY, bat) < 0 ||
+		    access(path, R_OK) != 0) /* battery absent: n/a, no warn */
 			return NULL;
 		if (pscanf(path, "%d", &cap_perc) != 1)
 			return NULL;
