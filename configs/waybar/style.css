@@ -1,0 +1,125 @@
+
+/* oxycarbon dark - matches configs/foot, configs/tmux, configs/qutebrowser */
+@define-color bg #161616;
+@define-color bg-light #262626;
+@define-color bg-lighter #393939;
+@define-color fg #dde1e6;
+@define-color fg-bright #f2f4f8;
+@define-color fg-dim #8d8d8d;
+@define-color accent #78a9ff;
+@define-color red #fa4d56;
+@define-color green #42be65;
+
+* {
+    font-family: Liberation Mono;
+    font-weight: bold;
+    font-size: 12px;
+    border: none;
+    border-radius: 0px;
+    min-height: 0px;
+}
+
+window#waybar {
+    background-color: @bg;
+    color: @fg;
+    transition: background-color 0.3s ease;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 0px 0px;
+}
+
+
+#workspaces button {
+    padding: 0px 3px;
+    margin: 0px;
+    color: @fg;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#workspaces button.empty {
+    color: @fg;
+    opacity: 0.35;
+}
+
+#workspaces button:hover {
+    color: @fg-bright;
+    opacity: 1;
+    background: @bg-light;
+}
+
+#workspaces button.active {
+    background: @accent;
+    color: @bg;
+}
+
+#workspaces button.urgent {
+    color: @red;
+    border-bottom: 2px solid alpha(@red, 0.75);
+    animation: blink 0.8s step-end infinite;
+}
+
+#window {
+padding: 0px 3px;
+}
+#clock,
+#custom-dnd,
+#network,
+#pulseaudio,
+#backlight,
+#battery,
+#cpu,
+#memory,
+#tray {
+padding: 0px 5px;
+color: @fg;
+}
+
+
+#battery {
+    background-color: alpha(@accent, 0.18);
+    border-radius: 0px;
+    margin: 2px 0;
+    padding: 0px 10px;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @fg;
+}
+
+#battery.warning:not(.charging) {
+    color: alpha(@fg, 0.75);
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation: blink 1s step-end infinite;
+}
+
+#cpu.warning,
+#memory.warning {
+color: @green;
+}
+
+#cpu.critical,
+#memory.critical {
+color: @red;
+}
+
+#pulseaudio.muted {
+color: @red;
+}
+
+#network.disconnected {
+    color: @fg-dim;
+}
+
+tooltip {
+    background-color: @bg;
+    border: 1px solid alpha(@fg, 0.20);
+    color: @fg;
+}

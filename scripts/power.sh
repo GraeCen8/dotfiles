@@ -10,7 +10,7 @@ set -e
 # wmenu style — same Oxocarbon palette as menucmd in config.h
 choice=$(printf '%s\n' Performance Balanced Power-saver Lock Reboot Poweroff \
 	| wmenu -i -p 'power:' \
-		-f "JetBrainsMono Nerd Font Mono Bold 12" \
+		-f "JetBrainsMono Nerd Font Mono Bold 15px" \
 		-n "#f2f4f8" -N "#161616" \
 		-m "#161616" -M "#78a9ff" \
 		-s "#161616" -S "#78a9ff") || exit 0

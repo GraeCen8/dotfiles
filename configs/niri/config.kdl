@@ -142,6 +142,11 @@ animations {
     slowdown 0.5
 }
 
+window-rule {
+    match app-id="org.qutebrowser.qutebrowser"
+    open-maximized true
+}
+
 /-window-rule { // remove /- to enable
     geometry-corner-radius 12
     clip-to-geometry true
@@ -154,6 +159,7 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: wmenu" { spawn-sh "~/dots/scripts/apps.sh"; }
     Mod+Space hotkey-overlay-title="Run an Application: wmenu" { spawn-sh "~/dots/scripts/apps.sh"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Q { spawn "qutebrowser"; }
 
     // my scripts
     Mod+Backspace { spawn-sh "~/dots/scripts/power.sh"; }
@@ -172,8 +178,6 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
     Mod+O repeat=false { toggle-overview; }
-
-    Mod+Q repeat=false { close-window; }
     Mod+W repeat=false { close-window; }
 
     Mod+H     { focus-column-left; }

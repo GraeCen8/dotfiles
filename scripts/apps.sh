@@ -5,7 +5,9 @@
 # `wmenu -h`). Theme matches the sway/foot palette (IBM Carbon-ish):
 # bg 161616, text dde1e6, accent 78a9ff, selection bg f2f4f8 / fg 161616.
 
-menu_font="JetBrainsMono Nerd Font Mono Bold 12"
+# Height-matched to waybar: wmenu's bar height is just the font
+# line-height + 2px (no padding), so the font must carry the whole height.
+menu_font="JetBrainsMono Nerd Font Mono Bold 15px"
 normal_bg=161616
 normal_fg=dde1e6
 want_bg=78a9ff

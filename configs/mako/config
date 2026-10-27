@@ -1,0 +1,18 @@
+# oxycarbon dark - matches configs/foot, configs/tmux, configs/qutebrowser, configs/waybar
+background-color=#161616
+text-color=#dde1e6
+border-color=#78a9ff
+progress-color=over #262626
+font=JetBrainsMono Nerd Font Mono Bold 12px
+default-timeout=5000
+width=400
+height=110
+padding=10
+max-icon-size=24
+
+[urgency=high]
+border-color=#fa4d56
+
+# Hide specific notifications
+[summary="Wayland Diagnose"]
+invisible=1
