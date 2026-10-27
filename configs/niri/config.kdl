@@ -152,6 +152,17 @@ window-rule {
     clip-to-geometry true
 }
 
+window-rule {
+    match app-id="fastfetch-popup"
+    open-floating true
+    focus-ring {
+        off
+    }
+    shadow {
+        off
+    }
+}
+
 binds {
 
     Mod+Shift+Slash { show-hotkey-overlay; }
@@ -164,6 +175,8 @@ binds {
     // my scripts
     Mod+Backspace { spawn-sh "~/dots/scripts/power.sh"; }
     Mod+Shift+W { spawn-sh "~/dots/scripts/wall.sh"; }
+    Mod+N hotkey-overlay-title="Fastfetch popup" { spawn-sh "~/dots/scripts/ffpop.sh"; }
+    Mod+U hotkey-overlay-title="Fastfetch popup" { spawn-sh "~/dots/scripts/ffpop.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
