@@ -1,6 +1,6 @@
 # sway config
 
-exec autotiling
+# exec autotiling
 
 set $mod Mod4
 set $term foot
@@ -25,7 +25,7 @@ gaps outer 4
 
 # this machine's displays: AOC C27G4Z pair (see pc/pkg.toml)
 output HDMI-A-1 mode 1920x1080@240.003Hz
-output DP-3 mode 1920x1080@280.003Hz
+output DP-3 mode 1920x1080@280.003Hz transform 270
 
 # workspace sets: 1–5 live on HDMI-A-1, 6–10 on DP-3
 # (a number can only belong to one output, so 5 stays on the left)
@@ -88,9 +88,8 @@ bindsym $mod+Ctrl+Shift+Up move container to output up, focus output up
 bindsym $mod+Ctrl+Shift+Right move container to output right, focus output right
 
 # splits / layouts
-bindsym $mod+a splith
-bindsym $mod+z splitv
-bindsym $mod+s layout stacking
+bindsym $mod+minus splith
+bindsym $mod+equal splitv
 bindsym $mod+m layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen toggle

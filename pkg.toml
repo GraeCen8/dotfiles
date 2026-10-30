@@ -9,7 +9,6 @@ url = "git@github.com:graecen8/dotfiles.git"
 [[system]]
 name = "base"
 packages = [
-    "autotiling",
     "base-devel",
     "bat",
     "btop",
@@ -25,13 +24,10 @@ packages = [
     "imv",
     "just",
     "lazygit",
-    "localsend-bin",
-    "lua-language-server",
     "lutris",
     "ly",
     "mako",
     "neovim",
-    "niri",
     "opencode",
     "python-adblock",
     "python-pip",
@@ -50,11 +46,8 @@ packages = [
     "wayland-protocols",
     "wiremix",
     "wl-clipboard",
-    "wlroots0.20",
     "wmenu",
-    "xdg-desktop-portal-wlr",
     "xorg-xwayland",
-    "xwayland-satellite",
     "zathura-pdf-mupdf",
     "zoxide",
     "zsh",
