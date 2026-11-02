@@ -1,5 +1,5 @@
 [config]
-mode = "pkg"
+mode = "rig"
 
 # GPU: NVIDIA RTX 4060 (Ada). nvidia-utils pulls egl-wayland/egl-gbm/egl-x11 + jemalloc as deps.
 # Non-package setup this machine needs (applied outside pkg mgmt):

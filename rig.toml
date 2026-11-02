@@ -1,5 +1,5 @@
 [config]
-mode = "pkg"
+mode = "rig"
 # stow = []       # these configs mirror into $HOME (GNU stow style)
 
 
@@ -11,12 +11,14 @@ name = "base"
 packages = [
     "base-devel",
     "bat",
+    "bluetui",
     "btop",
     "eza",
     "fastfetch",
     "fd",
     "foot",
     "fzf",
+    "gamescope",
     "git",
     "github-cli",
     "grim",
@@ -27,6 +29,7 @@ packages = [
     "lutris",
     "ly",
     "mako",
+    "marksman",
     "neovim",
     "opencode",
     "python-adblock",
@@ -41,6 +44,7 @@ packages = [
     "tree-sitter",
     "tree-sitter-cli",
     "ttf-jetbrains-mono-nerd",
+    "virtualbox",
     "waybar",
     "wayland",
     "wayland-protocols",

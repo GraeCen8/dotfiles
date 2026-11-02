@@ -7,7 +7,7 @@
 
 # Height-matched to waybar: wmenu's bar height is just the font
 # line-height + 2px (no padding), so the font must carry the whole height.
-menu_font="JetBrainsMono Nerd Font Mono Bold 15px"
+menu_font="JetBrainsMono Nerd Font Mono Bold 16px"
 normal_bg=161616
 normal_fg=dde1e6
 want_bg=78a9ff

@@ -1,5 +1,5 @@
 [config]
-mode = "pkg"
+mode = "rig"
 
 # gaming: Steam + Proton runtime tuning. Needs [multilib] enabled (steam + lib32-*)
 # and the lib32 nvidia driver stack from ../pc.

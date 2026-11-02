@@ -7,7 +7,6 @@ set $term foot
 set $browser qutebrowser
 # styled/case-insensitive inside scripts/apps.sh; $mod+d and $mod+space open it
 set $menu /home/grae/dots/scripts/apps.sh
-
 set $snip	/home/grae/dots/scripts/snip.sh
 set $lock	/home/grae/dots/scripts/lock.sh
 set $wall	/home/grae/dots/scripts/wall.sh
@@ -16,12 +15,12 @@ set $power	/home/grae/dots/scripts/power.sh
 font JetBrainsMono Nerd Font Mono 12
 
 hide_edge_borders smart
-default_border pixel 1
+default_border pixel 2
 default_floating_border pixel 1
 focus_follows_mouse yes
 
-gaps inner 4
-gaps outer 4
+gaps inner 2
+gaps outer 2
 
 # this machine's displays: AOC C27G4Z pair (see pc/pkg.toml)
 output HDMI-A-1 mode 1920x1080@240.003Hz
@@ -88,8 +87,8 @@ bindsym $mod+Ctrl+Shift+Up move container to output up, focus output up
 bindsym $mod+Ctrl+Shift+Right move container to output right, focus output right
 
 # splits / layouts
-bindsym $mod+minus splith
-bindsym $mod+equal splitv
+bindsym $mod+equal splith
+bindsym $mod+minus splitv
 bindsym $mod+m layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen toggle
@@ -138,7 +137,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+b bar mode toggle
 
 # scripts
-bindsym Print exec $snip
+bindsym $mod+Shift+S exec $snip
 bindsym $mod+Shift+w exec $wall
 bindsym $mod+Mod1+l exec $lock
 bindsym $mod+Backspace exec $power
