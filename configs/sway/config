@@ -12,19 +12,19 @@ set $lock	/home/grae/dots/scripts/lock.sh
 set $wall	/home/grae/dots/scripts/wall.sh
 set $power	/home/grae/dots/scripts/power.sh
 
-font JetBrainsMono Nerd Font Mono 12
+font JetBrainsMono Nerd Font Mono 10
 
 hide_edge_borders smart
 default_border pixel 2
 default_floating_border pixel 1
 focus_follows_mouse yes
 
-gaps inner 2
-gaps outer 2
+# gaps inner 2
+# gaps outer 2
 
 # this machine's displays: AOC C27G4Z pair (see pc/pkg.toml)
 output HDMI-A-1 mode 1920x1080@240.003Hz
-output DP-3 mode 1920x1080@280.003Hz transform 270
+output DP-3 mode 1920x1080@280.003Hz
 
 # workspace sets: 1–5 live on HDMI-A-1, 6–10 on DP-3
 # (a number can only belong to one output, so 5 stays on the left)
@@ -144,7 +144,7 @@ bindsym $mod+Backspace exec $power
 bindsym $mod+Escape exec $power
 
 bar {
-	position top
+	position bottom
 	status_command slstatus -s
 	mode dock
 	colors {
@@ -155,5 +155,3 @@ bar {
 		urgent_workspace   #161616 #161616 #fa4d56
 	}
 }
-
-exec ~/.config/sway/start.sh
